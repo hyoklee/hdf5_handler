@@ -165,7 +165,7 @@ bool HE5Parser::set_metadata(hid_t id, char *metadata_name, char *chr_all)
                 break;
             }
             if ((dataspace = H5Dget_space(dset)) < 0) {
-                cerr << "HE5Parser.cc failed to obtain dataspace from dataset " 
+                cerr << "HE5Parser.cc failed to obtain dataspace from dataset "
                      << dset << endl;
                 break;
             }
@@ -174,15 +174,15 @@ bool HE5Parser::set_metadata(hid_t id, char *metadata_name, char *chr_all)
     	       throw InternalErr(__FILE__, __LINE__, 
                                  "cannot return the size of datatype");
             }
-            char *chr = new char[size + 1];
-            if (H5Dread(dset, datatype, dataspace, dataspace, 
-                        H5P_DEFAULT,(void *) chr) < 0){	  	    
-                throw InternalErr(__FILE__, __LINE__, 
-                                  "Unable to read the data.");
+
+	    //char *chr = new char[size + 1];
+            vector<char> chr(size+1);
+            if (H5Dread(dset, datatype, dataspace, dataspace, H5P_DEFAULT, (void *)&chr[0])<0) {
+            	throw InternalErr(__FILE__, __LINE__, "Unable to read the data.");
             }
-            strncat(chr_all, chr, size);
+            strncat(chr_all, &chr[0], size);
             valid = true;
-            delete[] chr;
+            //delete[] chr;
         } else {
             // The sequence can skip <metdata>.0.
             // For example, "coremetadata" and then "coremetadata.1".
