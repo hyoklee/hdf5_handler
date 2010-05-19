@@ -120,7 +120,7 @@ void depth_first(hid_t pid, const char *gname, DAS & das)
 	    switch (type) {
 
             case H5G_GROUP:{
-                DBG(cerr << "=depth_first():H5G_GROUP " << oname << endl);
+                DBG(cerr << "=depth_first():H5G_GROUP " << &oname[0] << endl);
 #ifndef CF
                 add_group_structure_info(das, gname, &oname[0], true);
 #endif
@@ -171,7 +171,7 @@ void depth_first(hid_t pid, const char *gname, DAS & das)
             } // case H5G_GROUP
 
             case H5G_DATASET:{
-                DBG(cerr << "=depth_first():H5G_DATASET " << oname <<
+                DBG(cerr << "=depth_first():H5G_DATASET " << &oname[0] <<
                     endl);
 #ifndef CF
                 add_group_structure_info(das, gname, &oname[0], false);
