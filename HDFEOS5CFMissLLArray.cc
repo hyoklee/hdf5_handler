@@ -125,6 +125,8 @@ cerr <<"var name "<<varname <<endl;
            
         float lat_step = (end - start) /ydimsize;
 
+        // FIXME There are ways to get to this code where offset and step are still null
+        // or have not been allocated
         if ( HE5_HDFE_CENTER == eos5_pixelreg ) {
             for (int i = 0; i < nelms; i++)
                 val[i] = ((float)(offset[0]+i*step[0] + 0.5f) * lat_step + start) / 1000000.0;
@@ -151,6 +153,7 @@ cerr <<"var name "<<varname <<endl;
         }
         float lon_step = (end - start) /xdimsize;
 
+        // FIXME offset and step
         if (HE5_HDFE_CENTER == eos5_pixelreg) {
             for (int i = 0; i < nelms; i++)
                 val[i] = ((float)(offset[0] + i *step[0] + 0.5f) * lon_step + start ) / 1000000.0;

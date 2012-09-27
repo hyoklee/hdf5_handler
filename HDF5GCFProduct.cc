@@ -417,6 +417,7 @@ bool check_smap_acosl2s(hid_t s_root_id, int which_pro) {
                     // cerr <<"coming to variable length string "<<endl;
                     char *temp_buf = NULL;
                     try {
+                    	// TODO replace with vector<char>
                         temp_buf = new char[total_data_size];
                         if (H5Dread(s_dset_id,dtype,H5S_ALL,H5S_ALL,H5P_DEFAULT, temp_buf)<0){
                            H5Tclose(dtype);

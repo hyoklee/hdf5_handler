@@ -214,6 +214,7 @@ cerr<<"attr_name "<<cv_attr_name <<endl;
     float *total_val = NULL;
     float *orig_val = NULL;
     try {
+    	// FIXME val, ...,  leaked by throw on line 235
         val = new float[nelms];
         orig_val = new float[total_num_elm-1];
         total_val = new float[total_num_elm];
@@ -264,7 +265,8 @@ for (int i = 1; i < total_num_elm; i++)
 cerr<<"total_val "<< total_val[i] <<endl;
 #endif
  
-    for (int i = 0; i <nelms; i++)
+	// FIXME offset and/or step can be null
+	for (int i = 0; i <nelms; i++)
         val[i] = total_val[offset[0]+i*step[0]];
 #if 0
 for (int i = 0; i <nelms; i++)

@@ -121,7 +121,8 @@ bool depth_first(hid_t pid, char *gname, DDS & dds, const char *fname)
                 throw InternalErr(__FILE__, __LINE__, msg);
             }
 
-            // Obtain the name of the object 
+            // Obtain the name of the object
+            // TODO vector<char>
             oname = new char[(size_t) oname_size + 1];
 
             if (H5Lget_name_by_idx(pid,".",H5_INDEX_NAME,H5_ITER_NATIVE,i,oname,
@@ -168,6 +169,7 @@ bool depth_first(hid_t pid, char *gname, DDS & dds, const char *fname)
                     << endl);
 
                 // Get the C char* of the object name
+                // FIXME t_fpn leaked
                 char *t_fpn = new char[full_path_name.length() + 1];
                 (void)full_path_name.copy(t_fpn, full_path_name.length());
                 t_fpn[full_path_name.length()] = '\0';
@@ -407,6 +409,9 @@ static BaseType *Get_bt(const string &vname,
     switch (btp->type()) {
 
     case dods_byte_c: {
+    	// TODO In this/these case(s) you know the type is a dods_byte so you can
+    	// safely use static_cast<>() instead of the more expensive dynamic_cast
+    	// operator. Not a huge deal, but static_cast is faster.
         HDF5Byte &v = dynamic_cast < HDF5Byte & >(*btp);
         v.set_did(dt_inst.dset);
         v.set_tid(dt_inst.type);

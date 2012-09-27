@@ -205,6 +205,8 @@ cerr <<"var name "<<varname <<endl;
                 
         {
             try {
+            	// FIXME val leaked by throw on line 244
+            	// I don't understand the single line try block
                 val = new unsigned char[nelms];
             }
             catch (...) {
@@ -253,6 +255,7 @@ cerr <<"var name "<<varname <<endl;
         case H5CHAR:
         {
             try {
+            	// FIXME val leaked by throw
                 val = new char[nelms];
             }
             catch (...) {
@@ -333,6 +336,7 @@ cerr <<"var name "<<varname <<endl;
         case H5INT16:
         {
             try {
+            	// FIXME val leaked by throw
                 val = new short[nelms];
             }
             catch (...) {
@@ -382,6 +386,7 @@ cerr <<"var name "<<varname <<endl;
         case H5UINT16:
             {
                 try {
+                	// FIXME val leaked by throw
                     val = new unsigned short[nelms];
                 }
                 catch (...) {
@@ -425,6 +430,7 @@ cerr <<"var name "<<varname <<endl;
         case H5INT32:
         {
             try {
+            	// FIXME val leaked by throw
                 val = new int[nelms];
             }
             catch (...) {
@@ -472,6 +478,7 @@ cerr <<"var name "<<varname <<endl;
         case H5UINT32:
         {
             try {
+            	// FIXME val leaked by throw
                 val = new unsigned int[nelms];
             }
             catch (...) {
@@ -518,6 +525,7 @@ cerr <<"var name "<<varname <<endl;
         case H5FLOAT32:
         {
             try {
+            	// FIXME val leaked by throw
                 val = new float[nelms];
             }
             catch (...) {
@@ -565,6 +573,7 @@ cerr <<"var name "<<varname <<endl;
         case H5FLOAT64:
         {
             try {
+            	// FIXME val leaked by throw
                 val = new double[nelms];
             }
             catch (...) {

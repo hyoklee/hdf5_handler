@@ -304,6 +304,7 @@ void gen_dap_onegmcvar_dds(DDS &dds,const HDF5CF::GMCVar* cvar, const string & f
         case tid:                                           \
             bt = new (type)(cvar->getNewName(),cvar->getFullPath());  \
             break;
+    // FIXME bt leaked by throw
         HANDLE_CASE(H5FLOAT32, HDF5CFFloat32);
         HANDLE_CASE(H5FLOAT64, HDF5CFFloat64);
         HANDLE_CASE(H5CHAR,HDF5CFInt16);
@@ -421,6 +422,7 @@ void gen_dap_onegmspvar_dds(DDS &dds,const HDF5CF::GMSPVar* spvar, const string 
         case tid:                                           \
             bt = new (type)(spvar->getNewName(),spvar->getFullPath());  \
         break;
+    // FIXME bt leaked
         HANDLE_CASE(H5FLOAT32, HDF5CFFloat32);
         HANDLE_CASE(H5FLOAT64, HDF5CFFloat64);
         HANDLE_CASE(H5CHAR,HDF5CFInt16);

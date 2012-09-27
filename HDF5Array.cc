@@ -368,6 +368,7 @@ bool HDF5Array::m_array_of_reference()
 
 	if (H5Tequal(d_ty_id, H5T_STD_REF_DSETREG) > 0) {
 	    DBG(cerr << "=read() Got regional reference. " << endl);
+	    // FIXME rbuf leaked
             hdset_reg_ref_t *rbuf = new hdset_reg_ref_t[d_num_elm];
             if(rbuf == NULL){
                 throw InternalErr(__FILE__, __LINE__, "new() failed.");
@@ -507,6 +508,7 @@ bool HDF5Array::m_array_of_reference()
 
 	if (H5Tequal(d_ty_id, H5T_STD_REF_OBJ) > 0) {
 	    DBG(cerr << "=read() Got object reference. " << endl);
+	    // FIXME rbuf leaked
             hobj_ref_t *rbuf = new hobj_ref_t[d_num_elm];
             if(rbuf == NULL){
                 throw InternalErr(__FILE__, __LINE__, "new() failed.");

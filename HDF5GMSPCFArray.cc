@@ -249,6 +249,7 @@ cerr <<"var name "<<varname <<endl;
     hid_t read_ret = -1;
 
     try {
+    	// FIXME val, orig_val leaked by throw on line 287
         orig_val = new long long[nelms];
         val = new int[nelms];
     }

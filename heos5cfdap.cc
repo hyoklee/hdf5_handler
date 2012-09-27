@@ -343,6 +343,7 @@ void gen_dap_oneeos5cvar_dds(DDS &dds,const HDF5CF::EOS5CVar* cvar, const string
         case tid:                                           \
             bt = new (type)(cvar->getNewName(),cvar->getFullPath());  \
         break;
+    // FIXME bt leaked by throw
         HANDLE_CASE(H5FLOAT32, HDF5CFFloat32);
         HANDLE_CASE(H5FLOAT64, HDF5CFFloat64);
         HANDLE_CASE(H5CHAR,HDF5CFInt16);

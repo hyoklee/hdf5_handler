@@ -385,6 +385,7 @@ static char *print_attr(hid_t type, int loc, void *sm_buf) {
         }
 
         case H5T_FLOAT: {
+        	// FIXME rep is leaked by the throw - replace with vector<char>
             rep = new char[32];
             memset(rep, 0, 32);
             char gps[30];
@@ -531,7 +532,8 @@ void read_objects(DAS & das, const string & varname, hid_t oid, int num_attr)
                  DBG(cerr <<"attribute calculated size "<<(int)(H5Tget_size(attr_inst.type)) *(int)(H5Sget_simple_extent_npoints(temp_space_id)) <<endl);
 
                 // Variable length string attribute values only store pointers of the actual string value.
-                temp_buf = new char[(size_t)attr_inst.need];
+                // FIXME temp_buf is leaked by throw
+                 temp_buf = new char[(size_t)attr_inst.need];
 	        if (H5Aread(attr_id, ty_id, temp_buf) < 0) {
                     H5Sclose(temp_space_id);
                     H5Aclose(attr_id);
@@ -564,7 +566,7 @@ void read_objects(DAS & das, const string & varname, hid_t oid, int num_attr)
                 H5Sclose(temp_space_id);
             }
             else {
-
+            	//FIXME value is leaked by throw
 	        char *value = new char[attr_inst.need + sizeof(char)];
 	        memset(value, 0, attr_inst.need + sizeof(char));
 	        DBG(cerr << "arttr_inst.need=" << attr_inst.need << endl);
@@ -786,6 +788,8 @@ void get_softlink(DAS & das, hid_t pgroup, const char *gname, const string & ona
 
     char *buf = 0;
     try {
+    	// TODO replace buf with vector<char> buf(val_size + 1);
+    	// then access as a char * using &buf[0]
 	buf = new char[(val_size + 1) * sizeof(char)];
 	// get link target name
 	if (H5Lget_val(pgroup, oname.c_str(), (void*) buf,val_size + 1, H5P_DEFAULT)
@@ -871,7 +875,7 @@ void read_comments(DAS & das, const string & varname, hid_t oid)
 // cerr<<"comment_size= "<<comment_size <<endl;
 
     if (comment_size > 0) {
-
+    	// FIXME comment leaked
         char* comment = new char[comment_size+1];
         if (H5Oget_comment(oid,comment,comment_size+1)<0) {
 	    throw InternalErr(__FILE__, __LINE__,

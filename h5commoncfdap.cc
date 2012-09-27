@@ -63,6 +63,7 @@ void gen_dap_onevar_dds(DDS &dds,const HDF5CF::Var* var, const string & filename
         case tid:                                           \
             bt = new (type)(var->getNewName(),var->getFullPath());  \
             break;
+    // FIXME bt is leaked by the throw below
         HANDLE_CASE(H5FLOAT32, HDF5CFFloat32);
         HANDLE_CASE(H5FLOAT64, HDF5CFFloat64);
         HANDLE_CASE(H5CHAR,HDF5CFInt16);

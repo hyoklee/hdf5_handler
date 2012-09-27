@@ -76,6 +76,7 @@ hid_t get_attr_info(hid_t dset, int index, DSattr_t * attr_inst_ptr,
         throw InternalErr(__FILE__, __LINE__, msg);
     };
 
+    // FIXME attr_name leaked by the return on line 126
     char* attr_name = new char[name_size+1];
     // Obtain the attribute name.    
     if ((H5Aget_name(attrid, name_size+1, attr_name)) < 0) {

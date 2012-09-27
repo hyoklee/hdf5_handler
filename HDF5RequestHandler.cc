@@ -148,6 +148,8 @@ bool HDF5RequestHandler::hdf5_build_das(BESDataHandlerInterface & dhi)
         bdas->clear_container() ;
     }
     catch(InternalErr & e) {
+    	// TODO You can collapse this to 'throw BESDapError(e.get_er ...);'
+    	// Not a big deal...
         BESDapError ex(e.get_error_message(), true, e.get_error_code(),
                        __FILE__, __LINE__);
         throw ex;
