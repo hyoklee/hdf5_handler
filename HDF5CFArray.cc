@@ -196,7 +196,6 @@ cerr <<"var name "<<varname <<endl;
     // Now reading the data, note dtype is not dtypeid.
     // dtype is an enum  defined by the handler.
      
-    void *val = NULL;
     hid_t read_ret = -1;
 
     switch (dtype) {
@@ -204,31 +203,14 @@ cerr <<"var name "<<varname <<endl;
         case H5UCHAR:
                 
         {
-            try {
-            	// FIXME val leaked by throw on line 244
-            	// I don't understand the single line try block
-                val = new unsigned char[nelms];
-            }
-            catch (...) {
-                if (rank >0) 
-                    H5Sclose(mspace);
-                H5Tclose(memtype);
-                H5Tclose(dtypeid);
-                H5Sclose(dspace);
-                H5Dclose(dsetid);
-                H5Fclose(fileid);
-                HDF5CFUtil::ClearMem(offset,count,step,hoffset,hcount,hstep);
-                ostringstream eherr;
-                eherr << "Cannot allocate memory for dataset " << varname
-                      << " with the type of H5T_NATIVE_UCHAR "<<endl;
-                throw InternalErr (__FILE__, __LINE__, eherr.str ());
-            }
+            vector<unsigned char> val;
+            val.resize(nelms);
 
             
             if (0 == rank) 
-                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,&val[0]);
             else 
-                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,&val[0]);
 
             if (read_ret < 0) {
                 if (rank > 0) 
@@ -245,39 +227,21 @@ cerr <<"var name "<<varname <<endl;
                 throw InternalErr (__FILE__, __LINE__, eherr.str ());
 
             }
-            set_value ((dods_byte *) val, nelms);
-            if (val != NULL) 
-                delete[] (unsigned char*)val; 
+            set_value ((dods_byte *) &val[0], nelms);
         } // case H5UCHAR
             break;
 
 
         case H5CHAR:
         {
-            try {
-            	// FIXME val leaked by throw
-                val = new char[nelms];
-            }
-            catch (...) {
-                    
-                if (rank >0) 
-                    H5Sclose(mspace);
-                H5Tclose(memtype);
-                H5Tclose(dtypeid);
-                H5Sclose(dspace);
-                H5Dclose(dsetid);
-                H5Fclose(fileid);
-                HDF5CFUtil::ClearMem(offset,count,step,hoffset,hcount,hstep);
-                ostringstream eherr;
-                eherr << "Cannot allocate memory for dataset " << varname
-                      << " with the type of H5T_NATIVE_UCHAR "<<endl;
-                throw InternalErr (__FILE__, __LINE__, eherr.str ());
-            }
+
+            vector<char> val;
+            val.resize(nelms);
 
             if (0 == rank) 
-                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,&val[0]);
             else 
-                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,&val[0]);
 
             if (read_ret < 0) {
 
@@ -296,69 +260,26 @@ cerr <<"var name "<<varname <<endl;
 
             }
 
-            short* newval = NULL;
-            char* newvalchar = NULL;
-
-            try {
-                newval = new short[nelms];
-            }
-            catch (...) {
-                if (rank >0) 
-                    H5Sclose(mspace);
-                H5Tclose(memtype);
-                H5Tclose(dtypeid);
-                H5Sclose(dspace);
-                H5Dclose(dsetid);
-                H5Fclose(fileid);
-                HDF5CFUtil::ClearMem(offset,count,step,hoffset,hcount,hstep);
-                if(val != NULL) 
-                    delete[] (char *)val;
-                ostringstream eherr;
-                eherr << "Cannot allocate memory for dataset " << varname
-                      << " with the type of H5T_NATIVE_CHAR "<<endl;
-                throw InternalErr (__FILE__, __LINE__, eherr.str ());
-            }
-
-            newvalchar = (char*)val;
+            vector<short>newval;
+            newval.resize(nelms);
 
             for (int counter = 0; counter < nelms; counter++)
-                newval[counter] = (short) (newvalchar[counter]);
+                newval[counter] = (short) (val[counter]);
 
-            set_value ((dods_int16 *) newval, nelms);
-            if (val != NULL) 
-                delete[] (char*)val; 
-            if (newval != NULL) 
-                delete[]newval;
+            set_value ((dods_int16 *) &newval[0], nelms);
         } // case H5CHAR
            break;
 
 
         case H5INT16:
         {
-            try {
-            	// FIXME val leaked by throw
-                val = new short[nelms];
-            }
-            catch (...) {
-                if (rank >0) 
-                    H5Sclose(mspace);
-                H5Tclose(memtype);
-                H5Tclose(dtypeid);
-                H5Sclose(dspace);
-                H5Dclose(dsetid);
-                H5Fclose(fileid);
-                HDF5CFUtil::ClearMem(offset,count,step,hoffset,hcount,hstep);
-                ostringstream eherr;
-                eherr << "Cannot allocate memory for dataset " << varname
-                      << " with the type of H5T_NATIVE_SHORT "<<endl;
-                throw InternalErr (__FILE__, __LINE__, eherr.str ());
-            }
-
+            vector<short>val;
+            val.resize(nelms);
                 
             if (0 == rank) 
-                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,&val[0]);
             else 
-                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,&val[0]);
 
             if (read_ret < 0) {
 
@@ -376,34 +297,19 @@ cerr <<"var name "<<varname <<endl;
                 throw InternalErr (__FILE__, __LINE__, eherr.str ());
 
             }
-            set_value ((dods_int16 *) val, nelms);
-            if (val != NULL) 
-                delete[] (short*)val; 
+            set_value ((dods_int16 *) &val[0], nelms);
         }// H5INT16
             break;
 
 
         case H5UINT16:
             {
-                try {
-                	// FIXME val leaked by throw
-                    val = new unsigned short[nelms];
-                }
-                catch (...) {
-                    if (rank >0) H5Sclose(mspace);
-                    H5Tclose(memtype);
-                    H5Tclose(dtypeid);
-                    H5Sclose(dspace);
-                    H5Dclose(dsetid);
-                    H5Fclose(fileid);
-                    HDF5CFUtil::ClearMem(offset,count,step,hoffset,hcount,hstep);
-                    ostringstream eherr;
-                    eherr << "Cannot allocate memory for dataset " << varname
-                        << " with the type of H5T_NATIVE_USHORT "<<endl;
-                    throw InternalErr (__FILE__, __LINE__, eherr.str ());
-                }
-                if (0 == rank) read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,val);
-                else read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,val);
+                vector<unsigned short> val;
+                val.resize(nelms);
+                if (0 == rank) 
+                   read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,&val[0]);
+                else 
+                   read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,&val[0]);
 
                 if (read_ret < 0) {
 
@@ -420,39 +326,19 @@ cerr <<"var name "<<varname <<endl;
                     throw InternalErr (__FILE__, __LINE__, eherr.str ());
 
                 }
-                set_value ((dods_uint16 *) val, nelms);
-                if (val != NULL) 
-                    delete[] (unsigned short*)val;        
+                set_value ((dods_uint16 *) &val[0], nelms);
             } // H5UINT16
             break;
 
 
         case H5INT32:
         {
-            try {
-            	// FIXME val leaked by throw
-                val = new int[nelms];
-            }
-            catch (...) {
-
-                if (rank >0) 
-                    H5Sclose(mspace);
-                H5Tclose(memtype);
-                H5Tclose(dtypeid);
-                H5Sclose(dspace);
-                H5Dclose(dsetid);
-                H5Fclose(fileid);
-                HDF5CFUtil::ClearMem(offset,count,step,hoffset,hcount,hstep);
-                ostringstream eherr;
-                eherr << "Cannot allocate memory for dataset " << varname
-                      << " with the type of H5T_NATIVE_INT "<<endl;
-                throw InternalErr (__FILE__, __LINE__, eherr.str ());
-            }
-
+            vector<int>val;
+            val.resize(nelms);
             if (0 == rank) 
-                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,&val[0]);
             else 
-                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,&val[0]);
 
             if (read_ret < 0) {
                 if (rank > 0) 
@@ -469,36 +355,18 @@ cerr <<"var name "<<varname <<endl;
                 throw InternalErr (__FILE__, __LINE__, eherr.str ());
 
             }
-            set_value ((dods_int32 *) val, nelms);
-            if (val!=NULL) 
-                delete[] (int*)val;        
+            set_value ((dods_int32 *) &val[0], nelms);
         } // case H5INT32
             break;
 
         case H5UINT32:
         {
-            try {
-            	// FIXME val leaked by throw
-                val = new unsigned int[nelms];
-            }
-            catch (...) {
-                if (rank >0) 
-                    H5Sclose(mspace);
-                H5Tclose(memtype);
-                H5Tclose(dtypeid);
-                H5Sclose(dspace);
-                H5Dclose(dsetid);
-                H5Fclose(fileid);
-                HDF5CFUtil::ClearMem(offset,count,step,hoffset,hcount,hstep);
-                ostringstream eherr;
-                eherr << "Cannot allocate memory for dataset " << varname
-                      << " with the type of H5T_NATIVE_UINT "<<endl;
-                throw InternalErr (__FILE__, __LINE__, eherr.str ());
-            }
+            vector<unsigned int>val;
+            val.resize(nelms);
             if (0 == rank) 
-                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,&val[0]);
             else 
-                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,&val[0]);
 
             if (read_ret < 0) {
 
@@ -516,37 +384,20 @@ cerr <<"var name "<<varname <<endl;
                 throw InternalErr (__FILE__, __LINE__, eherr.str ());
 
             }
-            set_value ((dods_uint32 *) val, nelms);
-            if (val != NULL) 
-                delete[] (unsigned int*)val;        
+            set_value ((dods_uint32 *) &val[0], nelms);
         }
             break;
 
         case H5FLOAT32:
         {
-            try {
-            	// FIXME val leaked by throw
-                val = new float[nelms];
-            }
-            catch (...) {
-                if (rank >0) 
-                    H5Sclose(mspace);
-                H5Tclose(memtype);
-                H5Tclose(dtypeid);
-                H5Sclose(dspace);
-                H5Dclose(dsetid);
-                H5Fclose(fileid);
-                HDF5CFUtil::ClearMem(offset,count,step,hoffset,hcount,hstep);
-                ostringstream eherr;
-                eherr << "Cannot allocate memory for dataset " << varname
-                      << " with the type of H5T_NATIVE_FLOAT "<<endl;
-                throw InternalErr (__FILE__, __LINE__, eherr.str ());
-            }
+
+            vector<float>val;
+            val.resize(nelms);
 
             if (0 == rank) 
-                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,&val[0]);
             else 
-                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,&val[0]);
 
             if (read_ret < 0) {
                 if (rank > 0) 
@@ -563,37 +414,20 @@ cerr <<"var name "<<varname <<endl;
                 throw InternalErr (__FILE__, __LINE__, eherr.str ());
 
             }
-            set_value ((dods_float32 *) val, nelms);
-            if (val != NULL) 
-                delete[] (float*)val;        
+            set_value ((dods_float32 *) &val[0], nelms);
         }
             break;
 
 
         case H5FLOAT64:
         {
-            try {
-            	// FIXME val leaked by throw
-                val = new double[nelms];
-            }
-            catch (...) {
-                if (rank > 0) 
-                    H5Sclose(mspace);
-                H5Tclose(memtype);
-                H5Tclose(dtypeid);
-                H5Sclose(dspace);
-                H5Dclose(dsetid);
-                H5Fclose(fileid);
-                HDF5CFUtil::ClearMem(offset,count,step,hoffset,hcount,hstep);
-                ostringstream eherr;
-                eherr << "Cannot allocate memory for dataset " << varname
-                      << " with the type of H5T_NATIVE_DOUBLE "<<endl;
-                throw InternalErr (__FILE__, __LINE__, eherr.str ());
-            }
+
+            vector<double>val;
+            val.resize(nelms);
             if (0 == rank) 
-                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,H5S_ALL,H5S_ALL,H5P_DEFAULT,&val[0]);
             else 
-                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,val);
+                read_ret = H5Dread(dsetid,memtype,mspace,dspace,H5P_DEFAULT,&val[0]);
 
             if (read_ret < 0) {
                 if (rank > 0) 
@@ -610,9 +444,7 @@ cerr <<"var name "<<varname <<endl;
                 throw InternalErr (__FILE__, __LINE__, eherr.str ());
 
             }
-            set_value ((dods_float64 *) val, nelms);
-            if (val != NULL) 
-                delete[] (double*)val;        
+            set_value ((dods_float64 *) &val[0], nelms);
         } // case H5FLOAT64
             break;
 

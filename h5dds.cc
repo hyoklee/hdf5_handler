@@ -108,6 +108,7 @@ bool depth_first(hid_t pid, char *gname, DDS & dds, const char *fname)
     for (hsize_t i = 0; i < nelems; i++) {
 
         char *oname = NULL;
+//        vector <char>oname;
 
         try {
 
@@ -170,11 +171,16 @@ bool depth_first(hid_t pid, char *gname, DDS & dds, const char *fname)
 
                 // Get the C char* of the object name
                 // FIXME t_fpn leaked
-                char *t_fpn = new char[full_path_name.length() + 1];
-                (void)full_path_name.copy(t_fpn, full_path_name.length());
+
+                vector <char>t_fpn;
+                t_fpn.resize(full_path_name.length()+1);
+                copy(full_path_name.begin(),full_path_name.end(),t_fpn.begin());
+
+//                char *t_fpn = new char[full_path_name.length() + 1];
+ //               (void)full_path_name.copy(t_fpn, full_path_name.length());
                 t_fpn[full_path_name.length()] = '\0';
 
-                hid_t cgroup = H5Gopen(pid, t_fpn,H5P_DEFAULT);
+                hid_t cgroup = H5Gopen(pid, &t_fpn[0],H5P_DEFAULT);
                 if (cgroup < 0){
 		   throw InternalErr(__FILE__, __LINE__, "h5_dds handler: H5Gopen() failed.");
 		}
@@ -183,13 +189,13 @@ bool depth_first(hid_t pid, char *gname, DDS & dds, const char *fname)
                 // Note the function get_hardlink is defined in h5das.cc
 		string oid = get_hardlink(pid, oname);
                 if (oid == "") {
-                    depth_first(cgroup, t_fpn, dds, fname);
+                    depth_first(cgroup, &t_fpn[0], dds, fname);
                 }
 
                 if (H5Gclose(cgroup) < 0){
 		   throw InternalErr(__FILE__, __LINE__, "Could not close the group.");
 		}
-                if (t_fpn) {delete[]t_fpn; t_fpn = NULL;}                
+  //              if (t_fpn) {delete[]t_fpn; t_fpn = NULL;}                
                 break;
             }
 

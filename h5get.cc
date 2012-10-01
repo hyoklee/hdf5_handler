@@ -76,11 +76,10 @@ hid_t get_attr_info(hid_t dset, int index, DSattr_t * attr_inst_ptr,
         throw InternalErr(__FILE__, __LINE__, msg);
     };
 
-    // FIXME attr_name leaked by the return on line 126
-    char* attr_name = new char[name_size+1];
+    vector<char> attr_name;
+    attr_name.resize(name_size+1);
     // Obtain the attribute name.    
-    if ((H5Aget_name(attrid, name_size+1, attr_name)) < 0) {
-        delete[] attr_name;
+    if ((H5Aget_name(attrid, name_size+1, &attr_name[0])) < 0) {
         H5Aclose(attrid);
         string msg = "unable to obtain the hdf5 attribute name  ";
         throw InternalErr(__FILE__, __LINE__, msg);
@@ -90,9 +89,8 @@ hid_t get_attr_info(hid_t dset, int index, DSattr_t * attr_inst_ptr,
     hid_t ty_id;
     if ((ty_id = H5Aget_type(attrid)) < 0) {
         string msg = "unable to obtain hdf5 datatype for the attribute  ";
-        string attrnamestr(attr_name);
+        string attrnamestr(attr_name.begin(),attr_name.end());
         msg += attrnamestr;
-        delete[] attr_name;
         H5Aclose(attrid);
         throw InternalErr(__FILE__, __LINE__, msg);
     }
@@ -100,9 +98,8 @@ hid_t get_attr_info(hid_t dset, int index, DSattr_t * attr_inst_ptr,
     H5T_class_t ty_class = H5Tget_class(ty_id);
     if (ty_class < 0) {
         string msg = "cannot get hdf5 attribute datatype class for the attribute ";
-        string attrnamestr(attr_name);
+        string attrnamestr(attr_name.begin(),attr_name.end());
         msg += attrnamestr;
-        delete[] attr_name;
         H5Aclose(attrid);
         throw InternalErr(__FILE__, __LINE__, msg);
     }
@@ -130,9 +127,8 @@ hid_t get_attr_info(hid_t dset, int index, DSattr_t * attr_inst_ptr,
     hid_t aspace_id;
     if ((aspace_id = H5Aget_space(attrid)) < 0) {
         string msg = "cannot get hdf5 dataspace id for the attribute ";
-        string attrnamestr(attr_name);
+        string attrnamestr(attr_name.begin(),attr_name.end());
         msg += attrnamestr;
-        delete[] attr_name;
         H5Aclose(attrid);
         throw InternalErr(__FILE__, __LINE__, msg);
     }
@@ -145,9 +141,8 @@ hid_t get_attr_info(hid_t dset, int index, DSattr_t * attr_inst_ptr,
     int ndims = H5Sget_simple_extent_ndims(aspace_id);
     if (ndims < 0) {
         string msg = "cannot get hdf5 dataspace number of dimension for attribute ";
-        string attrnamestr(attr_name);
+        string attrnamestr(attr_name.begin(),attr_name.end());
         msg += attrnamestr;
-        delete[] attr_name;
         H5Sclose(aspace_id);
         H5Aclose(attrid);
         throw InternalErr(__FILE__, __LINE__, msg);
@@ -156,9 +151,8 @@ hid_t get_attr_info(hid_t dset, int index, DSattr_t * attr_inst_ptr,
     // Check if the dimension size exceeds the maximum number of dimension DAP supports
     if (ndims > DODS_MAX_RANK) {
         string msg = "number of dimensions exceeds allowed for attribute ";
-        string attrnamestr(attr_name);
+        string attrnamestr(attr_name.begin(),attr_name.end());
         msg += attrnamestr;
-        delete[] attr_name;
         H5Sclose(aspace_id);
         H5Aclose(attrid);
         throw InternalErr(__FILE__, __LINE__, msg);
@@ -173,9 +167,8 @@ hid_t get_attr_info(hid_t dset, int index, DSattr_t * attr_inst_ptr,
     // attribute.
     if (H5Sget_simple_extent_dims(aspace_id, size, maxsize)<0){
         string msg = "cannot obtain the dim. info for the attribute ";
-        string attrnamestr(attr_name);
+        string attrnamestr(attr_name.begin(),attr_name.end());
         msg += attrnamestr;
-        delete[] attr_name;
         H5Sclose(aspace_id);
         H5Aclose(attrid);
         throw InternalErr(__FILE__, __LINE__, msg);
@@ -193,9 +186,8 @@ hid_t get_attr_info(hid_t dset, int index, DSattr_t * attr_inst_ptr,
     size_t ty_size = H5Tget_size(ty_id);
     if (ty_size == 0) {
         string msg = "cannot obtain the dtype size for the attribute ";
-        string attrnamestr(attr_name);
+        string attrnamestr(attr_name.begin(),attr_name.end());
         msg += attrnamestr;
-        delete[] attr_name;
         H5Sclose(aspace_id);
         H5Aclose(attrid);
         throw InternalErr(__FILE__, __LINE__, msg);
@@ -209,9 +201,8 @@ hid_t get_attr_info(hid_t dset, int index, DSattr_t * attr_inst_ptr,
 
     if (memtype < 0){
         string msg = "cannot obtain the memory dtype for the attribute ";
-        string attrnamestr(attr_name);
+        string attrnamestr(attr_name.begin(),attr_name.end());
         msg += attrnamestr;
-        delete[] attr_name;
         H5Sclose(aspace_id);
         H5Aclose(attrid);
 	throw InternalErr(__FILE__, __LINE__, msg);
@@ -222,7 +213,7 @@ hid_t get_attr_info(hid_t dset, int index, DSattr_t * attr_inst_ptr,
     (*attr_inst_ptr).ndims = ndims;
     (*attr_inst_ptr).nelmts = nelmts;
     (*attr_inst_ptr).need = need;
-    strncpy((*attr_inst_ptr).name, attr_name, name_size+1);
+    strncpy((*attr_inst_ptr).name, &attr_name[0], name_size+1);
 
     for (int j = 0; j < ndims; j++) {
         (*attr_inst_ptr).size[j] = size[j];

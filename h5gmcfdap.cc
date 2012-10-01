@@ -305,6 +305,11 @@ void gen_dap_onegmcvar_dds(DDS &dds,const HDF5CF::GMCVar* cvar, const string & f
             bt = new (type)(cvar->getNewName(),cvar->getFullPath());  \
             break;
     // FIXME bt leaked by throw
+    // James, I don't know why bt is leaked below.  Since here we basically
+    // follow the netCDF handler(ncdds.cc), could you give us some advice?
+    // If it is still causing potential leaks,  we can fix this in the next release.
+    // KY 2012-09-28
+
         HANDLE_CASE(H5FLOAT32, HDF5CFFloat32);
         HANDLE_CASE(H5FLOAT64, HDF5CFFloat64);
         HANDLE_CASE(H5CHAR,HDF5CFInt16);
@@ -423,6 +428,11 @@ void gen_dap_onegmspvar_dds(DDS &dds,const HDF5CF::GMSPVar* spvar, const string 
             bt = new (type)(spvar->getNewName(),spvar->getFullPath());  \
         break;
     // FIXME bt leaked
+    // James, I don't know why bt is leaked below.  Since here we basically
+    // follow the netCDF handler(ncdds.cc), could you give us some advice?
+    // If it is still causing potential leaks, we can fix this in the next release.
+    // KY 2012-09-28
+
         HANDLE_CASE(H5FLOAT32, HDF5CFFloat32);
         HANDLE_CASE(H5FLOAT64, HDF5CFFloat64);
         HANDLE_CASE(H5CHAR,HDF5CFInt16);

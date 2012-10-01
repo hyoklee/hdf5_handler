@@ -88,11 +88,11 @@ bool HDF5Str::read()
 	throw InternalErr(__FILE__, __LINE__, "cannot return the size of datatype");
     }
     if (get_dap_type(ty_id) == "String") {
-    	// FIXME chr leaked by throw
-	char *chr = new char[size + 1];
-	get_data(dset_id, (void *) chr);
+        vector<char>chr;
+        chr.resize(size+1);
+	get_data(dset_id, (void *) &chr[0]);
 	set_read_p(true);
-	string str = chr;
+        string str(chr.begin(),chr.end());
 	set_value(str);
 
         // Release the handles.
@@ -103,8 +103,6 @@ bool HDF5Str::read()
             throw InternalErr(__FILE__, __LINE__, "Unable to close the dset.");
         }
 
-
-	delete[] chr;
     }
 
     if (get_dap_type(ty_id) == "Structure") {

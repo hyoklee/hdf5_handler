@@ -369,7 +369,10 @@ bool HDF5Array::m_array_of_reference()
 	if (H5Tequal(d_ty_id, H5T_STD_REF_DSETREG) > 0) {
 	    DBG(cerr << "=read() Got regional reference. " << endl);
 	    // FIXME rbuf leaked
+            // Vector doesn't work for this case. somehow it doesn't support the type.
             hdset_reg_ref_t *rbuf = new hdset_reg_ref_t[d_num_elm];
+//            vector<hdset_reg_ref_t> rbuf;
+ //           rbuf.resize(d_num_elm);
             if(rbuf == NULL){
                 throw InternalErr(__FILE__, __LINE__, "new() failed.");
             }
@@ -508,11 +511,8 @@ bool HDF5Array::m_array_of_reference()
 
 	if (H5Tequal(d_ty_id, H5T_STD_REF_OBJ) > 0) {
 	    DBG(cerr << "=read() Got object reference. " << endl);
-	    // FIXME rbuf leaked
-            hobj_ref_t *rbuf = new hobj_ref_t[d_num_elm];
-            if(rbuf == NULL){
-                throw InternalErr(__FILE__, __LINE__, "new() failed.");
-            }
+            vector<hobj_ref_t> rbuf;
+            rbuf.resize(d_num_elm);
 	    if (H5Dread(d_dset_id, H5T_STD_REF_OBJ, H5S_ALL, H5S_ALL, H5P_DEFAULT, &rbuf[0]) < 0) {
 		throw InternalErr(__FILE__, __LINE__, "H5Dread failed()");
 	    }
@@ -534,7 +534,6 @@ bool HDF5Array::m_array_of_reference()
 		DBG(cerr << "=read() dereferenced name is " << name <<endl);
 		v_str[i] = varname;
 	    }
-            delete[] rbuf;
 	}
 	set_value(&v_str[0], nelms);
 	return false;
