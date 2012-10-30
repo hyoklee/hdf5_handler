@@ -42,6 +42,8 @@
 using namespace std;
 using namespace libdap;
 void gen_dap_onevar_dds(DDS &dds,const HDF5CF::Var*,const string &);
-void gen_dap_oneobj_das(AttrTable*,const HDF5CF::Attribute*);
+void gen_dap_oneobj_das(AttrTable*,const HDF5CF::Attribute*,const HDF5CF::Var*);
+bool need_special_attribute_handling(const HDF5CF::Attribute*,const HDF5CF::Var*);
+void gen_dap_special_oneobj_das(AttrTable*,const HDF5CF::Attribute*,const HDF5CF::Var*);
 void gen_dap_str_attr(AttrTable*,const HDF5CF::Attribute *);
 #endif

@@ -1,3 +1,10 @@
+2012-10-26  Hyo-Kyung (Joe) Lee  <hyoklee@hdfgroup.org>
+
+	* NEWS 
+	* configure.ac
+	* hdf5_handler.spec
+	changed version to 2.1.1.
+
 2012-06-08  hyoklee
 
 	added a special note about make check failure in Hyrax-1.7.1.

@@ -228,7 +228,7 @@ void gen_gmh5_cfdas( DAS & das, HDF5CF:: GMFile *f) {
             at = das.add_table(FILE_ATTR_TABLE_NAME, new AttrTable);
 
         for (it_ra = root_attrs.begin(); it_ra != root_attrs.end(); ++it_ra) {
-            gen_dap_oneobj_das(at,*it_ra);
+            gen_dap_oneobj_das(at,*it_ra,NULL);
         }
     }
 
@@ -241,7 +241,7 @@ void gen_gmh5_cfdas( DAS & das, HDF5CF:: GMFile *f) {
 
             for (it_ra = (*it_g)->getAttributes().begin();
                  it_ra != (*it_g)->getAttributes().end(); ++it_ra) {
-                gen_dap_oneobj_das(at,*it_ra);
+                gen_dap_oneobj_das(at,*it_ra,NULL);
             }
         }
     }
@@ -256,7 +256,7 @@ void gen_gmh5_cfdas( DAS & das, HDF5CF:: GMFile *f) {
 
             for (it_ra = (*it_v)->getAttributes().begin();
                  it_ra != (*it_v)->getAttributes().end(); ++it_ra) 
-                gen_dap_oneobj_das(at,*it_ra);
+                gen_dap_oneobj_das(at,*it_ra,*it_v);
                     
         }
     }
@@ -272,7 +272,7 @@ void gen_gmh5_cfdas( DAS & das, HDF5CF:: GMFile *f) {
 
             for (it_ra = (*it_cv)->getAttributes().begin();
                  it_ra != (*it_cv)->getAttributes().end(); ++it_ra) 
-                gen_dap_oneobj_das(at,*it_ra);
+                gen_dap_oneobj_das(at,*it_ra,*it_v);
                     
         }
     }
@@ -287,7 +287,7 @@ void gen_gmh5_cfdas( DAS & das, HDF5CF:: GMFile *f) {
 
             for (it_ra = (*it_spv)->getAttributes().begin();
                  it_ra != (*it_spv)->getAttributes().end(); ++it_ra) 
-                gen_dap_oneobj_das(at,*it_ra);
+                gen_dap_oneobj_das(at,*it_ra,*it_spv);
         }
     }
        

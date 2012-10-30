@@ -344,6 +344,11 @@ void gen_dap_oneeos5cvar_dds(DDS &dds,const HDF5CF::EOS5CVar* cvar, const string
             bt = new (type)(cvar->getNewName(),cvar->getFullPath());  \
         break;
     // FIXME bt leaked by throw
+    // James, I don't know why bt is leaked below.  Since here we basically
+    // follow the netCDF handler(ncdds.cc), could you give us some advice?
+    // If it is still causing potential leaks, we can fix this in the next release.
+    // KY 2012-09-28
+
         HANDLE_CASE(H5FLOAT32, HDF5CFFloat32);
         HANDLE_CASE(H5FLOAT64, HDF5CFFloat64);
         HANDLE_CASE(H5CHAR,HDF5CFInt16);
@@ -514,7 +519,7 @@ void gen_eos5_cfdas(DAS &das, hid_t file_id, HDF5CF::EOS5File *f) {
             at = das.add_table(FILE_ATTR_TABLE_NAME, new AttrTable);
 
         for (it_ra = root_attrs.begin(); it_ra != root_attrs.end(); it_ra++) {
-            gen_dap_oneobj_das(at,*it_ra);
+            gen_dap_oneobj_das(at,*it_ra,NULL);
         }
     }
 
@@ -527,7 +532,7 @@ void gen_eos5_cfdas(DAS &das, hid_t file_id, HDF5CF::EOS5File *f) {
 
             for (it_ra = (*it_g)->getAttributes().begin();
                  it_ra != (*it_g)->getAttributes().end(); ++it_ra) {
-                gen_dap_oneobj_das(at,*it_ra);
+                gen_dap_oneobj_das(at,*it_ra,NULL);
             }
         }
     }
@@ -542,7 +547,7 @@ void gen_eos5_cfdas(DAS &das, hid_t file_id, HDF5CF::EOS5File *f) {
 
             for (it_ra = (*it_v)->getAttributes().begin();
                  it_ra != (*it_v)->getAttributes().end(); ++it_ra) {
-                gen_dap_oneobj_das(at,*it_ra);
+                gen_dap_oneobj_das(at,*it_ra,*it_v);
             }
         }
     }
@@ -558,7 +563,7 @@ void gen_eos5_cfdas(DAS &das, hid_t file_id, HDF5CF::EOS5File *f) {
 
             for (it_ra = (*it_cv)->getAttributes().begin();
                  it_ra != (*it_cv)->getAttributes().end(); ++it_ra) {
-                 gen_dap_oneobj_das(at,*it_ra);
+                 gen_dap_oneobj_das(at,*it_ra,*it_cv);
             }
         }
     }

@@ -123,20 +123,147 @@ void gen_dap_onevar_dds(DDS &dds,const HDF5CF::Var* var, const string & filename
     }
 }
 
-void gen_dap_oneobj_das(AttrTable*at,const HDF5CF::Attribute* attr) {
+// Currently only when the datatype of fillvalue is not the same as the datatype of the variable, 
+// special attribute handling is needed.
+bool need_special_attribute_handling(const HDF5CF::Attribute* attr,const HDF5CF::Var* var) { 
+    return ((("_FillValue" == attr->getNewName()) && (var->getType() != attr->getType()))?true:false);
+}
+
+     
+// Currently we only handle the case when the datatype of _FillValue is not the same as the variable datatype.
+void gen_dap_special_oneobj_das(AttrTable*at, const HDF5CF::Attribute* attr,const HDF5CF::Var* var) {
+
+    if (attr->getCount() != 1) 
+        throw InternalErr(__FILE__,__LINE__,"FillValue attribute can only have one element.");
+
+    H5DataType var_dtype = var->getType();
+    string print_rep;
+
+    switch(var_dtype) {
+
+        case H5UCHAR:
+        {
+            unsigned char final_fill_value = (unsigned char)(attr->getValue()[0]);
+            print_rep = HDF5CFDAPUtil::print_attr(var_dtype,0,(void*)&final_fill_value);
+        }
+            break;
+
+        case H5CHAR:
+        {
+            // Notice HDF5 native char maps to DAP int16. 
+            short final_fill_value = (short)(attr->getValue()[0]);
+            print_rep = HDF5CFDAPUtil::print_attr(var_dtype,0,(void*)&final_fill_value);
+        }
+            break;
+        case H5INT16:
+        {
+            short final_fill_value = (short)(attr->getValue()[0]);
+            print_rep = HDF5CFDAPUtil::print_attr(var_dtype,0,(void*)&final_fill_value);
+        }
+            break;
+        case H5UINT16:
+        {
+            unsigned short final_fill_value = (unsigned short)(attr->getValue()[0]);
+            print_rep = HDF5CFDAPUtil::print_attr(var_dtype,0,(void*)&final_fill_value);
+        }
+            break;
+
+        case H5INT32:
+        {
+            int final_fill_value = (int)(attr->getValue()[0]);
+            print_rep = HDF5CFDAPUtil::print_attr(var_dtype,0,(void*)&final_fill_value);
+        }
+            break;
+        case H5UINT32:
+        {
+            unsigned int final_fill_value = (unsigned int)(attr->getValue()[0]);
+            print_rep = HDF5CFDAPUtil::print_attr(var_dtype,0,(void*)&final_fill_value);
+        }
+            break;
+        case H5FLOAT32:
+        {
+            float final_fill_value = (float)(attr->getValue()[0]);
+            print_rep = HDF5CFDAPUtil::print_attr(var_dtype,0,(void*)&final_fill_value);
+        }
+            break;
+        case H5FLOAT64:
+        {
+            double final_fill_value = (double)(attr->getValue()[0]);
+            print_rep = HDF5CFDAPUtil::print_attr(var_dtype,0,(void*)&final_fill_value);
+        }
+            break;
+        default:
+            throw InternalErr(__FILE__,__LINE__,"unsupported data type.");
+    }
+
+    at->append_attr(attr->getNewName(), HDF5CFDAPUtil::print_type(var_dtype), print_rep);
+}
+
+#if 0
+    switch(var_dtype) {
+
+        case H5UCHAR:
+        {
+            unsigned char final_fill_value = (unsigned char)(attr->getValue()[0]);
+            string print_rep = HDF5CFDAPUtil::print_attr(var_dtype,0,(void*)&final_fill_value);
+
+        }
+            break;
+
+#endif
+
+    
+
+
+
+
+void gen_dap_oneobj_das(AttrTable*at,const HDF5CF::Attribute* attr, const HDF5CF::Var *var) {
 
     if ((H5FSTRING == attr->getType()) ||
         (H5VSTRING == attr->getType())) {
         gen_dap_str_attr(at,attr);
     }
     else {
-        size_t mem_dtype_size = (attr->getBufSize())/(attr->getCount());
-        H5DataType mem_dtype = HDF5CFDAPUtil::get_mem_dtype(attr->getType(),mem_dtype_size);
-        for (unsigned int loc=0; loc < attr->getCount() ; loc++) {
-            string print_rep = HDF5CFDAPUtil::print_attr(mem_dtype, loc, (void*) &(attr->getValue()[0]));
-            at->append_attr(attr->getNewName(), HDF5CFDAPUtil::print_type(attr->getType()), print_rep);
+
+        if (NULL == var) {
+
+            // HDF5 Native Char maps to DAP INT16(DAP doesn't have the corresponding datatype), so needs to
+            // obtain the mem datatype. 
+            size_t mem_dtype_size = (attr->getBufSize())/(attr->getCount());
+            H5DataType mem_dtype = HDF5CFDAPUtil::get_mem_dtype(attr->getType(),mem_dtype_size);
+
+            for (unsigned int loc=0; loc < attr->getCount() ; loc++) {
+                string print_rep = HDF5CFDAPUtil::print_attr(mem_dtype, loc, (void*) &(attr->getValue()[0]));
+                at->append_attr(attr->getNewName(), HDF5CFDAPUtil::print_type(attr->getType()), print_rep);
+            }
+ 
         }
-   }
+
+        else {
+
+            // The datatype of _FillValue attribute needs to be the same as the variable datatype for an netCDF C file.
+            // To make OPeNDAP's netCDF file out work, we need to change the attribute datatype of _FillValue to be the
+            // same as the variable datatype if they are not the same. An OMI-Aura_L2-OMUVB file has such a case.
+            // The datatype of "TerrainHeight" is int32 but the datatype of the fillvalue is int16. 
+            bool special_attr_handling = need_special_attribute_handling(attr,var);
+            if (true == special_attr_handling) {
+                gen_dap_special_oneobj_das(at,attr,var);           
+            }
+
+            else {
+
+                // HDF5 Native Char maps to DAP INT16(DAP doesn't have the corresponding datatype), so needs to
+                // obtain the mem datatype. 
+                size_t mem_dtype_size = (attr->getBufSize())/(attr->getCount());
+                H5DataType mem_dtype = HDF5CFDAPUtil::get_mem_dtype(attr->getType(),mem_dtype_size);
+
+                for (unsigned int loc=0; loc < attr->getCount() ; loc++) {
+                    string print_rep = HDF5CFDAPUtil::print_attr(mem_dtype, loc, (void*) &(attr->getValue()[0]));
+                    at->append_attr(attr->getNewName(), HDF5CFDAPUtil::print_type(attr->getType()), print_rep);
+                }
+            }
+        }
+    }
 }
 
 void gen_dap_str_attr(AttrTable *at, const HDF5CF::Attribute *attr) {
