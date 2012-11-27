@@ -245,6 +245,7 @@ void gen_dap_oneobj_das(AttrTable*at,const HDF5CF::Attribute* attr, const HDF5CF
             // To make OPeNDAP's netCDF file out work, we need to change the attribute datatype of _FillValue to be the
             // same as the variable datatype if they are not the same. An OMI-Aura_L2-OMUVB file has such a case.
             // The datatype of "TerrainHeight" is int32 but the datatype of the fillvalue is int16. 
+            // KY 2012-11-20
             bool special_attr_handling = need_special_attribute_handling(attr,var);
             if (true == special_attr_handling) {
                 gen_dap_special_oneobj_das(at,attr,var);           

@@ -1453,16 +1453,37 @@ else cerr <<"xmlmeta data has the suffix" <<endl;
 
 int get_metadata_num(const string & meta_str) {
 
+    // The normal metadata names should be like coremetadata.0, coremetadata.1 etc.
+    // We just find a not so nice coremetadata names such as coremetadata.0, coremetadata.0.1 for a HIRDLS-MLS-Aura-L3
+    // We need to handle them. Here we assume no more than two dots in a name series. KY 2012-11-08
     size_t dot_pos = meta_str.find(".");
-    if (dot_pos == string::npos) 
+    if (dot_pos == string::npos) // No dot
         return -1;
-    else {
-       string num_str = meta_str.substr(dot_pos+1);
-       stringstream ssnum(num_str);
-       int num;
-       ssnum >> num;
-       return num;
+    else if (meta_str.find_first_of(".") == meta_str.find_last_of(".")) { // One dot
+        string num_str = meta_str.substr(dot_pos+1);
+        stringstream ssnum(num_str);
+        int num;
+        ssnum >> num;
+        if (false == ssnum) 
+            throw InternalErr(__FILE__,__LINE__,"Suffix after dots is not a number.");
+        return num;
     }
+    else { // Two dots
+        string str_after_first_dot = meta_str.substr(dot_pos+1);
+        if (str_after_first_dot.find_first_of(".") != str_after_first_dot.find_last_of("."))    
+            throw InternalErr(__FILE__,__LINE__,"Currently don't support metadata names containing more than two dots.");
+        // Here we don't check if names are like coremetadata.0 coremetadata.0.0 etc., Having ".0 .0.0" is,if not mistaken,
+        // is insane. 
+        // Instead we hope that the data producers will produce data like coremetadata.0 coremetadata.0.1 coremeatadata.0.2
+        // KY 2012-11-08
+        size_t second_dot_pos = str_after_first_dot.find(".");
+        string num_str = str_after_first_dot.substr(second_dot_pos+1);
+        stringstream ssnum(num_str);
+        int num;
+        ssnum >> num;
+        return num;
+    }
+        
 }
        
        

@@ -268,11 +268,11 @@ void gen_gmh5_cfdas( DAS & das, HDF5CF:: GMFile *f) {
             AttrTable *at = das.get_table((*it_cv)->getNewName());
             if (NULL == at)
                 at = das.add_table((*it_cv)->getNewName(), new AttrTable);
-            // cerr<<"cv coordinate variable name "<<(*it_cv)->getNewName() <<endl;
+                //cerr<<"cv coordinate variable name "<<(*it_cv)->getNewName() <<endl;
 
             for (it_ra = (*it_cv)->getAttributes().begin();
                  it_ra != (*it_cv)->getAttributes().end(); ++it_ra) 
-                gen_dap_oneobj_das(at,*it_ra,*it_v);
+                gen_dap_oneobj_das(at,*it_ra,*it_cv);
                     
         }
     }

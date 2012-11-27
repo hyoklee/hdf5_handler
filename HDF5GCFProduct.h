@@ -41,7 +41,7 @@ using namespace std;
 
 
 enum H5GCFProduct
-{ General_Product,Mea_SeaWiFS_L2, Mea_SeaWiFS_L3,Mea_Ozone,Aqu_L3,ACOS_L2S,SMAP };
+{ General_Product,Mea_SeaWiFS_L2, Mea_SeaWiFS_L3,Mea_Ozone,Aqu_L3,ACOS_L2S,SMAP,NETCDF4_GENERAL };
 
 // Currently we only need to support four NASA generic HDF5 products for
 // the access of NASA data via CF-compliant vis. tools(IDV and Panoply) 
@@ -114,6 +114,9 @@ bool check_smap_acosl2s(hid_t root_id, int which_product);
 
 // Function to check if the product is MEaSURES Ozone zonal average or level 2.
 bool check_measure_ozone(hid_t root_id);
+
+// Function to check if the product is NETCDF4_GENERAL.
+bool check_netcdf4_general(hid_t root_id);
 
 // Obtain the attribute value of the HDF5 general attribute.
 void obtain_gm_attr_value(hid_t group_id, const char* attr_name, string & attr_value);
