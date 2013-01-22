@@ -42,6 +42,9 @@ void read_cfdas(DAS&, const string&);
 
 void read_cfdds(DDS & dds, const string &filename) {
 
+    // Set the DDS name be the file name
+    dds.set_dataset_name(name_path(filename));
+
     hid_t fileid;
     H5CFModule moduletype;
 

@@ -41,7 +41,7 @@ using namespace std;
 
 
 enum H5GCFProduct
-{ General_Product,Mea_SeaWiFS_L2, Mea_SeaWiFS_L3,Mea_Ozone,Aqu_L3,ACOS_L2S,SMAP,NETCDF4_GENERAL };
+{ General_Product,Mea_SeaWiFS_L2, Mea_SeaWiFS_L3,Mea_Ozone,Aqu_L3,ACOS_L2S,SMAP };
 
 // Currently we only need to support four NASA generic HDF5 products for
 // the access of NASA data via CF-compliant vis. tools(IDV and Panoply) 
