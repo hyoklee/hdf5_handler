@@ -85,6 +85,7 @@ bool HDF5GMCFMissLLArray::read()
             hstep[i] = (hsize_t) step[i];
         }
  
+#if 0
         hid_t fileid = -1;
         if ((fileid = H5Fopen(filename.c_str(),H5F_ACC_RDONLY,H5P_DEFAULT))<0) {
 
@@ -93,10 +94,11 @@ bool HDF5GMCFMissLLArray::read()
               << " cannot be opened. "<<endl;
             throw InternalErr (__FILE__, __LINE__, eherr.str ());
         }
+#endif
 
         hid_t rootid = -1;
         if ((rootid = H5Gopen(fileid,"/",H5P_DEFAULT)) < 0) {
-            H5Fclose(fileid);
+     //       H5Fclose(fileid);
             ostringstream eherr;
             eherr << "HDF5 dataset " << varname
                   << " cannot be opened. "<<endl;
@@ -121,7 +123,7 @@ bool HDF5GMCFMissLLArray::read()
             obtain_ll_attr_value(fileid,rootid,Num_lines_name,Num_lines);
             if (Num_lines <= 0) {
                 H5Gclose(rootid);
-                H5Fclose(fileid);
+                //H5Fclose(fileid);
                 throw InternalErr(__FILE__,__LINE__,"The number of line must be >0");
             }
 
@@ -144,7 +146,7 @@ bool HDF5GMCFMissLLArray::read()
             obtain_ll_attr_value(fileid,rootid,Num_columns_name,Num_cols);
             if (Num_cols <= 0) {
                 H5Gclose(rootid);
-                H5Fclose(fileid);
+                //H5Fclose(fileid);
                 throw InternalErr(__FILE__,__LINE__,"The number of line must be >0");
             }
 
@@ -157,23 +159,9 @@ bool HDF5GMCFMissLLArray::read()
         vector<float>val;
         val.resize(nelms);
 
-#if 0
-        float *val = NULL;
-         
-        try {
-            val       = new float[nelms];
-        }
-        catch (...) {
-            H5Gclose(rootid);
-            H5Fclose(fileid);
-            throw InternalErr (__FILE__, __LINE__,
-                          "Cannot allocate the memory for total_val and val for Latitude or Longitude");
-        }
-#endif
-
         if (nelms > LL_total_num) {
             H5Gclose(rootid);
-            H5Fclose(fileid);
+            //H5Fclose(fileid);
             throw InternalErr (__FILE__, __LINE__,
                           "The number of elements exceeds the total number of  Latitude or Longitude");
         }
@@ -183,13 +171,14 @@ bool HDF5GMCFMissLLArray::read()
 
         set_value ((dods_float32 *) &val[0], nelms);
         H5Gclose(rootid);
-        H5Fclose(fileid);
+        //H5Fclose(fileid);
     }
     return true;
 }
 
-template<class T>
-void HDF5GMCFMissLLArray::obtain_ll_attr_value(hid_t file_id, hid_t s_root_id,string s_attr_name, T& attr_value) {
+//template<class T>
+template<typename T>
+void HDF5GMCFMissLLArray::obtain_ll_attr_value(hid_t file_id, hid_t s_root_id,const string & s_attr_name, T& attr_value) {
 
     hid_t s_attr_id = -1;
     if ((s_attr_id = H5Aopen_by_name(s_root_id,".",s_attr_name.c_str(),
@@ -197,7 +186,7 @@ void HDF5GMCFMissLLArray::obtain_ll_attr_value(hid_t file_id, hid_t s_root_id,st
         string msg = "Cannot open the HDF5 attribute  ";
         msg += s_attr_name;
         H5Gclose(s_root_id);
-        H5Fclose(file_id);
+        //H5Fclose(file_id);
         throw InternalErr(__FILE__, __LINE__, msg);
     }
 
@@ -207,7 +196,7 @@ void HDF5GMCFMissLLArray::obtain_ll_attr_value(hid_t file_id, hid_t s_root_id,st
         msg += s_attr_name;
         H5Aclose(s_attr_id);
         H5Gclose(s_root_id);
-        H5Fclose(file_id);
+        //H5Fclose(file_id);
         throw InternalErr(__FILE__, __LINE__, msg);
     }
 
@@ -218,19 +207,20 @@ void HDF5GMCFMissLLArray::obtain_ll_attr_value(hid_t file_id, hid_t s_root_id,st
         H5Tclose(attr_type);
         H5Aclose(s_attr_id);
         H5Gclose(s_root_id);
-        H5Fclose(file_id);
+        //H5Fclose(file_id);
         throw InternalErr(__FILE__, __LINE__, msg);
     }
 
-    int num_elm = 0;
-    if (((num_elm = H5Sget_simple_extent_npoints(attr_space)) == 0)) {
+    int num_elm = H5Sget_simple_extent_npoints(attr_space);
+     
+    if (0 == num_elm ) {
         string msg = "cannot get the number for the attribute ";
         msg += s_attr_name;
         H5Tclose(attr_type);
         H5Aclose(s_attr_id);
         H5Sclose(attr_space);
         H5Gclose(s_root_id);
-        H5Fclose(file_id);
+        //H5Fclose(file_id);
         throw InternalErr(__FILE__, __LINE__, msg);
     }
 
@@ -241,7 +231,7 @@ void HDF5GMCFMissLLArray::obtain_ll_attr_value(hid_t file_id, hid_t s_root_id,st
         H5Aclose(s_attr_id);
         H5Sclose(attr_space);
         H5Gclose(s_root_id);
-        H5Fclose(file_id);
+        //H5Fclose(file_id);
         throw InternalErr(__FILE__, __LINE__, msg);
     }
 
@@ -254,7 +244,7 @@ void HDF5GMCFMissLLArray::obtain_ll_attr_value(hid_t file_id, hid_t s_root_id,st
         H5Aclose(s_attr_id);
         H5Sclose(attr_space);
         H5Gclose(s_root_id);
-        H5Fclose(file_id);
+        //H5Fclose(file_id);
         throw InternalErr(__FILE__, __LINE__, msg);
     }
 
@@ -265,7 +255,7 @@ void HDF5GMCFMissLLArray::obtain_ll_attr_value(hid_t file_id, hid_t s_root_id,st
         H5Aclose(s_attr_id);
         H5Sclose(attr_space);
         H5Gclose(s_root_id);
-        H5Fclose(file_id);
+        //H5Fclose(file_id);
         throw InternalErr(__FILE__, __LINE__, msg);
 
     }
