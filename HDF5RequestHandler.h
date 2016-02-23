@@ -48,11 +48,13 @@ private:
 
     static bool use_experimental_cache;
 
+#ifdef EXPERIMENTAL_MEM_CACHE
     // This is part of an experiment to test the performance gains from memory
     // caching these objects. jhrg 2/18/16
     static map<std::string, libdap::DAS> das_cache;
     static map<std::string, libdap::DDS> dds_cache;
     static map<std::string, libdap::DataDDS> data_dds_cache;
+#endif
 
     static bool hdf5_build_data_with_IDs(BESDataHandlerInterface &dhi);
     static bool hdf5_build_dmr_with_IDs(BESDataHandlerInterface &dhi);
