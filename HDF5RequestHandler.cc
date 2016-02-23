@@ -195,13 +195,6 @@ bool HDF5RequestHandler::hdf5_build_das(BESDataHandlerInterface & dhi)
 #endif
         bdas->clear_container();
     }
-#if 0
-    // TODO Kent, I *think* this block should be replaced by the simpler catch(...) below
-    // because higher up in the BES these difference exceptions are caught and handled
-    // in ways that result in better errors being returned to the user (this is new
-    // behavior in Hyrax 1.13). Recasting the exceptions here means that the file/line
-    // information will indicate that the exception was thrown here, not where it really
-    // was thrown. I'm sending an email to Nathan to double check on this... jhrg 2/22/16
     catch (InternalErr & e) {
         if (cf_fileid != -1) H5Fclose(cf_fileid);
         throw BESDapError(e.get_error_message(), true, e.get_error_code(),  __FILE__, __LINE__);
@@ -217,11 +210,6 @@ bool HDF5RequestHandler::hdf5_build_das(BESDataHandlerInterface & dhi)
     catch (...) {
         if (cf_fileid != -1) H5Fclose(cf_fileid);
         throw BESInternalFatalError("unknown exception caught building HDF5 DAS", __FILE__, __LINE__);
-    }
-#endif
-    catch (...) {
-        if (cf_fileid != -1) H5Fclose(cf_fileid);
-        throw;
     }
 
     return true;
