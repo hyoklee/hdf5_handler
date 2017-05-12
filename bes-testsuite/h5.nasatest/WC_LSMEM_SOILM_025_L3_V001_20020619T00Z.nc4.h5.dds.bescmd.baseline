@@ -1,0 +1,7 @@
+Dataset {
+    Float32 sma[time = 1][lat = 720][lon = 1440];
+    Float32 smd[time = 1][lat = 720][lon = 1440];
+    Float64 lat[lat = 720];
+    Float64 lon[lon = 1440];
+    Float64 time[time = 1];
+} WC_LSMEM_SOILM_025_L3_V001_20020619T00Z.nc4.h5;

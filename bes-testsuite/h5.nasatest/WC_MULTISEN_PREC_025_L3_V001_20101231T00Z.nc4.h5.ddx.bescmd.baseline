@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Dataset name="WC_MULTISEN_PREC_025_L3_V001_20101231T00Z.nc4.h5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xml.opendap.org/ns/DAP2" xsi:schemaLocation="http://xml.opendap.org/ns/DAP2 http://xml.opendap.org/dap/dap2.xsd">
+    <Attribute name="HDF5_GLOBAL" type="Container">
+        <Attribute name="Title" type="String">
+            <value>TMPA/TMI/TRMM Precipitation and Uncertainty 3-Hourly Level-3 0.25-degree</value>
+        </Attribute>
+        <Attribute name="ProcessingCenter" type="String">
+            <value>Colorado State University</value>
+        </Attribute>
+        <Attribute name="ContactPersonName" type="String">
+            <value>Chris Kummerow, Janice Bytheway</value>
+        </Attribute>
+        <Attribute name="ContactPersonRole" type="String">
+            <value>Co-Investigator, Research Associate</value>
+        </Attribute>
+        <Attribute name="ContactPersonEmail" type="String">
+            <value>&lt;kummerow@atmos.colostate.edu&gt;, &lt;janice@atmos.colostate.edu&gt;</value>
+        </Attribute>
+        <Attribute name="ContactPersonAddress" type="String">
+            <value>1371 Campus Delivery, Fort Collins, CO 80523</value>
+        </Attribute>
+        <Attribute name="Source" type="String">
+            <value>Precipitation estimates obtained from the TRMM TMPA Data Set based on the TRMM Multisatellite Precipitation Analysis (TMPA) algorithm (Huffman et al., 2007) Version 7 data (Huffman and Bolvin, 2013). Error estimation algorithm description in Bytheway and Kummerow (2013)</value>
+        </Attribute>
+        <Attribute name="ProductReference1" type="String">
+            <value>Huffman, G. J., R. F. Adler, D. T. Bolvin, G. Gu, E. J. Nelkin, K. P. Bowman, Y. Hong, E. F. Stocker, and D. B. Wolff, 2007: The TRMM multisatellite precipitation analysis (TMPA): Quasi-global, multiyear, combined-sensor precipitation estimates at fine scales, J. Hydrometeorol. 8, 38-55, doi:10.1175.JHM560.1</value>
+        </Attribute>
+        <Attribute name="ProductReference2" type="String">
+            <value>Huffman, G. J. and D. T. Bolvin, 2013: TRMM and other data precipitation data set documentation. Available at: ftp://precip.gsfc.nasa.gov/pub/trmmdocs/3B42_3B43_doc.pdf</value>
+        </Attribute>
+        <Attribute name="ProductReference3" type="String">
+            <value>Bytheway, J. L. and C. D. Kummerow, 2013: Inferring the uncertainty of satellite precipitation estimates in data-sparse regions over land, J. Geophys. Res., 118, 9524-9533, doi:10.1002/jgrd.50607</value>
+        </Attribute>
+        <Attribute name="identifier_product_doi" type="String">
+            <value>10.5067/MEASURES/WATERCYCLE/DATA312</value>
+        </Attribute>
+        <Attribute name="identifier_product_doi_authority" type="String">
+            <value>http://dx.doi.org/</value>
+        </Attribute>
+        <Attribute name="ShortName" type="String">
+            <value>WC_MULTISEN_PREC_025</value>
+        </Attribute>
+        <Attribute name="ProcessingDate" type="String">
+            <value>2015-04-22</value>
+        </Attribute>
+        <Attribute name="VersionID" type="String">
+            <value>001</value>
+        </Attribute>
+        <Attribute name="Conventions" type="String">
+            <value>CF-1.0</value>
+        </Attribute>
+        <Attribute name="LocalGranuleID" type="String">
+            <value>WC_MULTISEN_PREC_025_L3_V001_20101231T00Z.nc4</value>
+        </Attribute>
+        <Attribute name="Format" type="String">
+            <value>NETCDF4</value>
+        </Attribute>
+        <Attribute name="RangeBeginningDate" type="String">
+            <value>2010-12-31</value>
+        </Attribute>
+        <Attribute name="RangeBeginningTime" type="String">
+            <value>00:00:00</value>
+        </Attribute>
+        <Attribute name="RangeEndingDate" type="String">
+            <value>2010-12-31</value>
+        </Attribute>
+        <Attribute name="RangeEndingTime" type="String">
+            <value>23:59:59</value>
+        </Attribute>
+        <Attribute name="NorthBoundingCoordinate" type="String">
+            <value>50</value>
+        </Attribute>
+        <Attribute name="SouthBoundingCoordinate" type="String">
+            <value>-50</value>
+        </Attribute>
+        <Attribute name="WestBoundingCoordinate" type="String">
+            <value>-180</value>
+        </Attribute>
+        <Attribute name="EastBoundingCoordinate" type="String">
+            <value>180</value>
+        </Attribute>
+        <Attribute name="LatitudeResolution" type="String">
+            <value>0.25</value>
+        </Attribute>
+        <Attribute name="LongitudeResolution" type="String">
+            <value>0.25</value>
+        </Attribute>
+        <Attribute name="NCO" type="String">
+            <value>4.1.0</value>
+        </Attribute>
+    </Attribute>
+    <Attribute name="DODS_EXTRA" type="Container">
+        <Attribute name="Unlimited_Dimension" type="String">
+            <value>time</value>
+        </Attribute>
+    </Attribute>
+    <Array name="prec">
+        <Attribute name="_FillValue" type="Float32">
+            <value>-999000000.0</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>mm</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>3-hourly Accumulated Precipitation</value>
+        </Attribute>
+        <Attribute name="standard_name" type="String">
+            <value>precipitation_amount</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>prec</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/prec</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="time" size="8"/>
+        <dimension name="lat" size="720"/>
+        <dimension name="lon" size="1440"/>
+    </Array>
+    <Array name="rmse">
+        <Attribute name="_FillValue" type="Float32">
+            <value>-999000000.0</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>mm</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Root Mean Square Error</value>
+        </Attribute>
+        <Attribute name="standard_name" type="String">
+            <value>rmse_precipitation_amount</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>rmse</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/rmse</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="time" size="8"/>
+        <dimension name="lat" size="720"/>
+        <dimension name="lon" size="1440"/>
+    </Array>
+    <Array name="lat">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>lat</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>0</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_north</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Latitude</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lat</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lat</value>
+        </Attribute>
+        <Float64/>
+        <dimension name="lat" size="720"/>
+    </Array>
+    <Array name="lon">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>lon</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_east</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Longitude</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lon</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lon</value>
+        </Attribute>
+        <Float64/>
+        <dimension name="lon" size="1440"/>
+    </Array>
+    <Array name="time">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>time</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>2</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Time</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>minutes since 2010-12-31 00:00</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>time</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/time</value>
+        </Attribute>
+        <Float64/>
+        <dimension name="time" size="8"/>
+    </Array>
+    <dataBLOB href=""/>
+</Dataset>

@@ -1,0 +1,82 @@
+Attributes {
+    HDF5_GLOBAL {
+        String title "Multisensor Advanced Climatology of LWP (MAC-LWP) Cloud-Component Only LWP (CloudLWP)";
+        String Identifier_Product_DOI_Authority "http://dx.doi.org/";
+        String Identifier_Product_DOI "10.5067/MEASURES/MACLWPM";
+        String institution "Columbia University/NASA GISS, New York, NY; and Colorado State University, Fort Collins, CO";
+        String source "Based upon Remote Sensing Systems (RSS) V7 SSM/I, V7 SSMIS, V7 WindSat, V7 AMSR-E, V7 AMSR-2, V7 TMI, and V8.1 GMI 0.25 Degree Cloud LWP Retrievals.  Co-located AMSR-E/MODIS data have revealed the presence of a bias in Cloud LWP (positive Cloud LWP when there should be none). Thus, all sensor and scene 0.25 Degree Cloud LWP data are bias-corrected to account for this discrepancy.";
+        String history "This MAC-LWP Version 1 field was created on Feb 2017. The MAC-LWP product, further described in Elsaesser et al. (2017, J. Climate), is an extension of the heritage UWisc CloudLWP climatology (O'Dell et al. 2008, J. Climate). The use of the latest Remote Sensing Systems (RSS) input datasets, several new satellite sensors, a total (cloud+rain) liquid water path field, and a cloud water bias correction are new relative to the UWisc product.";
+        String references "MAC-LWP product and data fields are described in Elsaesser et al. 2017 (J. Climate).";
+        String comments "Negative numbers should be treated as 0.0 for monthly cloud or total LWP.  However, they must be taken into account (i.e. averaged) in climate studies that perform spatial/temporal averaging of these data to avoid biasing.";
+        String contact "Greg Elsaesser: gregory.elsaesser@columbia.edu; Chris O'Dell: odell@atmos.colostate.edu; Matt Lebsock: matthew.d.lebsock@jpl.nasa.gov; Frank Wentz: frank.wentz@remss.com.";
+        String Conventions "CF-1.6";
+    }
+    lon_bnds {
+        Int32 _Netcdf4Dimid 0;
+        String origname "lon_bnds";
+        String fullnamepath "/lon_bnds";
+    }
+    lat_bnds {
+        Int32 _Netcdf4Dimid 2;
+        String origname "lat_bnds";
+        String fullnamepath "/lat_bnds";
+    }
+    cloudlwp {
+        String long_name "Monthly Average Cloud Liquid Water Path";
+        String units "g/m^2";
+        Float32 missing_value -999.0000000;
+        Float32 _FillValue -999.0000000;
+        String comment "Corrected for diurnal cycle.  Contains cloud only; no rain component.";
+        String origname "cloudlwp";
+        String fullnamepath "/cloudlwp";
+    }
+    cloudlwp_error {
+        String long_name "1-sigma Error on Monthly Average Cloud Liquid Water Path";
+        String units "g/m^2";
+        Float32 missing_value -999.0000000;
+        Float32 _FillValue -999.0000000;
+        String comment "Approximate statistical error only.  Does not contain systematic errors, which are not fully known.";
+        String origname "cloudlwp_error";
+        String fullnamepath "/cloudlwp_error";
+    }
+    bnds {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "This is a netCDF dimension but not a netCDF variable.         2";
+        Int32 _Netcdf4Dimid 1;
+    }
+    lat {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "lat";
+        Int32 _Netcdf4Dimid 2;
+        String long_name "latitude";
+        String units "degrees_north";
+        String axis "Y";
+        String bounds "lat_bnds";
+        String origname "lat";
+        String fullnamepath "/lat";
+    }
+    lon {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "lon";
+        Int32 _Netcdf4Dimid 0;
+        String long_name "longitude";
+        String units "degrees_east";
+        String axis "X";
+        String bounds "lon_bnds";
+        String origname "lon";
+        String fullnamepath "/lon";
+    }
+    time {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "time";
+        Int32 _Netcdf4Dimid 3;
+        String long_name "Month index (0-11); 0=January, ..., 11=December";
+        String units "months since 1997-01-01 00:00:00";
+        String axis "T";
+        String origname "time";
+        String fullnamepath "/time";
+    }
+    DODS_EXTRA {
+        String Unlimited_Dimension "time";
+    }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request reqID="some_unique_value" >
+    <setContext name="dap_format">dap2</setContext>
+    <setContainer name="LANDMET_ANC_SM_L3_v1" space="catalog">/data/LANDMET_ANC_SM_L3_v1.nc.h5</setContainer>
+    <define name="d">
+	<container name="LANDMET_ANC_SM_L3_v1" />
+    </define>
+    <get type="dds" definition="d" />
+</request>

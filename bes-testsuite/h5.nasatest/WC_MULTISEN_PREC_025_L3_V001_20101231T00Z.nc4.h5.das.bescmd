@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request reqID="some_unique_value" >
+    <setContext name="dap_format">dap2</setContext>
+    <setContainer name="maclwp_cloudlwpave_1997_v1" space="catalog">/data/WC_MULTISEN_PREC_025_L3_V001_20101231T00Z.nc4.h5</setContainer>
+    <define name="d">
+	<container name="maclwp_cloudlwpave_1997_v1" />
+    </define>
+    <get type="das" definition="d" />
+</request>

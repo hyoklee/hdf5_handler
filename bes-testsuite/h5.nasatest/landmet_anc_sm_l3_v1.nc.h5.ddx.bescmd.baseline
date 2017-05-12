@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Dataset name="LANDMET_ANC_SM_L3_v1.nc.h5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xml.opendap.org/ns/DAP2" xsi:schemaLocation="http://xml.opendap.org/ns/DAP2 http://xml.opendap.org/dap/dap2.xsd">
+    <Attribute name="HDF5_GLOBAL" type="Container">
+        <Attribute name="Conventions" type="String">
+            <value>CF-1.4</value>
+        </Attribute>
+        <Attribute name="title" type="String">
+            <value>LANDMET Soil Moisture Ancillary data</value>
+        </Attribute>
+        <Attribute name="author" type="String">
+            <value>William B. Rossow</value>
+        </Attribute>
+        <Attribute name="producer" type="String">
+            <value>William B. Rossow</value>
+        </Attribute>
+        <Attribute name="institution" type="String">
+            <value>The City College of New York NOAA/CREST</value>
+        </Attribute>
+        <Attribute name="first_release_date" type="String">
+            <value>November 2016</value>
+        </Attribute>
+        <Attribute name="source" type="String">
+            <value> ESA soil moisture CCI projects. Contract No. ESRIN 22086/08/I-EC, ESRIN 4000104814/11/I-NB</value>
+        </Attribute>
+        <Attribute name="citation" type="String">
+            <value>TBD</value>
+        </Attribute>
+        <Attribute name="references" type="String">
+            <value>TBD</value>
+        </Attribute>
+        <Attribute name="identifier_product_DOI" type="String">
+            <value>10.5067/MEASURES/LANDMET/ANC004</value>
+        </Attribute>
+        <Attribute name="identifier_product_DOI_authority" type="String">
+            <value>http://dx.doi.org/</value>
+        </Attribute>
+        <Attribute name="comment" type="String">
+            <value>Data extracted from the ESA Soil Moisture CCI project ancillary datasets; Version one produced at CCNY</value>
+        </Attribute>
+        <Attribute name="version_id" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="short_name" type="String">
+            <value>LANDMET_ANC_SM</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>LANDMET Ancillary Soil Moisture data L3</value>
+        </Attribute>
+        <Attribute name="granule_id" type="String">
+            <value>LANDMET_ANC_SM_L3_v1.nc</value>
+        </Attribute>
+        <Attribute name="format" type="String">
+            <value>netCDF-4 classic</value>
+        </Attribute>
+        <Attribute name="range_beginning_time" type="String">
+            <value>00:00:00</value>
+        </Attribute>
+        <Attribute name="range_ending_time" type="String">
+            <value>23:59:59</value>
+        </Attribute>
+        <Attribute name="range_beginning_date" type="String">
+            <value>1998-01-01</value>
+        </Attribute>
+        <Attribute name="range_ending_date" type="String">
+            <value>2007-12-31</value>
+        </Attribute>
+        <Attribute name="production_run_date" type="String">
+            <value>2016-11-22</value>
+        </Attribute>
+        <Attribute name="production_run_time" type="String">
+            <value>08:17:49</value>
+        </Attribute>
+    </Attribute>
+    <Array name="sqlon_beg">
+        <Attribute name="long_name" type="String">
+            <value>Square grid beginning longitude index</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>sqlon_beg</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/sqlon_beg</value>
+        </Attribute>
+        <Int16/>
+        <dimension name="eqcell" size="41252"/>
+    </Array>
+    <Array name="eqlon">
+        <Attribute name="long_name" type="String">
+            <value>Center longitude of equal-area cell</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_east</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float64">
+            <value>0.0000000000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float64">
+            <value>360.00000000000000</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>eqlon</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/eqlon</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="eqcell" size="41252"/>
+    </Array>
+    <Array name="eqarea">
+        <Attribute name="long_name" type="String">
+            <value>Equal-area cell area</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>km2</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>eqarea</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/eqarea</value>
+        </Attribute>
+        <Int32/>
+        <dimension name="eqcell" size="41252"/>
+    </Array>
+    <Array name="lat_bounds">
+        <Attribute name="long_name" type="String">
+            <value>Beginning and ending latitude for each latitude zone</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_north</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lat_bounds</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lat_bounds</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="lat" size="180"/>
+        <dimension name="edge" size="2"/>
+    </Array>
+    <Array name="wf">
+        <Attribute name="long_name" type="String">
+            <value>Wetland Fraction</value>
+        </Attribute>
+        <Attribute name="valid_range" type="Float32">
+            <value>0.000000000</value>
+            <value>100.0000000</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>Percent</value>
+        </Attribute>
+        <Attribute name="_CoordinateAxes" type="String">
+            <value>lat lon</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-9999.000000</value>
+        </Attribute>
+        <Attribute name="summary" type="String">
+            <value>Remapped 1 degree wetland fraction has been derived from the Global Lakes and Wetlands Database (GLWD) level 3 product. From the Discrete Global Grid (DGG) the wetland fraction has been mapped to the 0.25 degree grid by nearest neighbor search. </value>
+        </Attribute>
+        <Attribute name="references" type="String">
+            <value>Lehner, B., &amp; D\303\203\302\266ll, P. (2004). Development and validation of a global database of lakes, reservoirs and wetlands. Journal of Hydrology, 296, 1</value>
+        </Attribute>
+        <Attribute name="comment" type="String">
+            <value>These data was remapped from ESACCI-SOILMOISTURE-WETLAND_FRACTION_V01.1; from ESA soil moisture CCI projects. Contract No. ESRIN 22086/08/I-EC, ESRIN 4000104814/11/I-NB</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>wf</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/wf</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="eqcell" size="41252"/>
+    </Array>
+    <Array name="eqcells_in_zone">
+        <Attribute name="long_name" type="String">
+            <value>Number of longitude cells in each equal-area zone</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Int32">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Int32">
+            <value>360</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>eqcells_in_zone</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/eqcells_in_zone</value>
+        </Attribute>
+        <Int16/>
+        <dimension name="eqzone" size="180"/>
+    </Array>
+    <Array name="eqlon_index">
+        <Attribute name="long_name" type="String">
+            <value>Longitude index of equal-area cell</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Int32">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Int32">
+            <value>360</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>eqlon_index</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/eqlon_index</value>
+        </Attribute>
+        <Int16/>
+        <dimension name="eqcell" size="41252"/>
+    </Array>
+    <Array name="eqlat_index">
+        <Attribute name="long_name" type="String">
+            <value>Latitude index of equal-area cell</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Int32">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Int32">
+            <value>180</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>eqlat_index</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/eqlat_index</value>
+        </Attribute>
+        <Int16/>
+        <dimension name="eqcell" size="41252"/>
+    </Array>
+    <Array name="eqlat">
+        <Attribute name="long_name" type="String">
+            <value>Center latitude of equal-area cell</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_north</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float64">
+            <value>-90.000000000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float64">
+            <value>90.000000000000000</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>eqlat</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/eqlat</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="eqcell" size="41252"/>
+    </Array>
+    <Array name="lon_bounds">
+        <Attribute name="long_name" type="String">
+            <value>Begining and ending longitude for each longitude zone</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_east</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lon_bounds</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lon_bounds</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="lon" size="360"/>
+        <dimension name="edge" size="2"/>
+    </Array>
+    <Array name="sqlon_end">
+        <Attribute name="long_name" type="String">
+            <value>Square grid ending longitude index</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>sqlon_end</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/sqlon_end</value>
+        </Attribute>
+        <Int16/>
+        <dimension name="eqcell" size="41252"/>
+    </Array>
+    <Array name="porosity">
+        <Attribute name="long_name" type="String">
+            <value>Porosity</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>percent</value>
+        </Attribute>
+        <Attribute name="valid_range" type="Float32">
+            <value>0.000000000</value>
+            <value>100.0000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-9999.000000</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>Remapped ESA CCI ECV SOILMOISTURE Porosity from Vienna University of Technology, VU University Amsterdam, cci_sm_contact@eodc.eu,Harmonized World Soil Database (version 1.0),2015-08-06 15:19:32 - product produced</value>
+        </Attribute>
+        <Attribute name="references" type="String">
+            <value>Saxton, K. E., Rawls, W. J., Soil Water Characteristic Estimates by Texture and Organic Matter for Hydrologic Solutions. SOILSCI, 2006. 70:1569\342\200\2231578. doi:10.2136/sssaj2005.0117; FAO/IIASA/ISRIC/ISSCAS/JRC, 2008. Harmonized World Soil Database (version 1.0). FAO, Rome, Italy and IIASA, Laxenburg, Austria.</value>
+        </Attribute>
+        <Attribute name="tracking_id" type="String">
+            <value>c796dfe2-5204-41ac-8560-84e6cbfce1f2</value>
+        </Attribute>
+        <Attribute name="product_version" type="String">
+            <value>01.1</value>
+        </Attribute>
+        <Attribute name="summary" type="String">
+            <value>Porosity derived from HWSD v1 (2008) and Saxton and Rawls (2006)</value>
+        </Attribute>
+        <Attribute name="id" type="String">
+            <value>d:\\users\\dc\\ccism\\v02.2\\000_ancillary\\porosity\\ESACCI-SOILMOISTURE-POROSITY_V01.1.nc</value>
+        </Attribute>
+        <Attribute name="comment" type="String">
+            <value>These data were remapped from ESACCI-SOILMOISTURE-POROSITY_V01.1 from the ESA soil moisture CCI projects. Contract No. ESRIN 22086/08/I-EC, ESRIN 4000104814/11/I-NB</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>porosity</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/porosity</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="eqcell" size="41252"/>
+    </Array>
+    <Array name="edge">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>This is a netCDF dimension but not a netCDF variable.         2</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>0</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="edge" size="2"/>
+    </Array>
+    <Array name="eqcell">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>This is a netCDF dimension but not a netCDF variable.     41252</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>1</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="eqcell" size="41252"/>
+    </Array>
+    <Array name="eqzone">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>This is a netCDF dimension but not a netCDF variable.       180</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>2</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="eqzone" size="180"/>
+    </Array>
+    <Array name="lat">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>lat</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>4</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Latitude</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_north</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float64">
+            <value>-90.000000000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float64">
+            <value>90.000000000000000</value>
+        </Attribute>
+        <Attribute name="bounds" type="String">
+            <value>lat_bounds</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>Center latitude of square grid cell</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lat</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lat</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="lat" size="180"/>
+    </Array>
+    <Array name="lon">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>lon</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>3</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Longitude</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_east</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float64">
+            <value>0.0000000000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float64">
+            <value>360.00000000000000</value>
+        </Attribute>
+        <Attribute name="bounds" type="String">
+            <value>lon_bounds</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>Center longitude of square grid cell</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lon</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lon</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="lon" size="360"/>
+    </Array>
+    <dataBLOB href=""/>
+</Dataset>

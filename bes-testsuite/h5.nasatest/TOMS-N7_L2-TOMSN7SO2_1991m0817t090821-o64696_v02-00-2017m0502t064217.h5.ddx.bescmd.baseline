@@ -1,0 +1,1573 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Dataset name="TOMS-N7_L2-TOMSN7SO2_1991m0817t090821-o64696_v02-00-2017m0502t064217.h5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xml.opendap.org/ns/DAP2" xsi:schemaLocation="http://xml.opendap.org/ns/DAP2 http://xml.opendap.org/dap/dap2.xsd">
+    <Attribute name="HDF5_GLOBAL" type="Container">
+        <Attribute name="AuthorAffiliation" type="String">
+            <value>NASA/GSFC </value>
+        </Attribute>
+        <Attribute name="AuthorName" type="String">
+            <value>N. Krotkov, et al. </value>
+        </Attribute>
+        <Attribute name="Conventions" type="String">
+            <value>CF-1.0 </value>
+        </Attribute>
+        <Attribute name="DataSetQuality" type="String">
+            <value>Under investigation. </value>
+        </Attribute>
+        <Attribute name="DayNightFlag" type="String">
+            <value>Day </value>
+        </Attribute>
+        <Attribute name="EastBoundingCoordinate" type="Float32">
+            <value>180.0000000</value>
+        </Attribute>
+        <Attribute name="EquatorCrossingDate" type="String">
+            <value>1991-08-17 </value>
+        </Attribute>
+        <Attribute name="EquatorCrossingLongitude" type="Float32">
+            <value>13.71999931</value>
+        </Attribute>
+        <Attribute name="EquatorCrossingTime" type="String">
+            <value>10:00:26 </value>
+        </Attribute>
+        <Attribute name="FOVResolution" type="String">
+            <value>50x50km </value>
+        </Attribute>
+        <Attribute name="GranuleDayOfMonth" type="Int32">
+            <value>17</value>
+        </Attribute>
+        <Attribute name="GranuleDayOfYear" type="Int32">
+            <value>229</value>
+        </Attribute>
+        <Attribute name="GranuleMonth" type="Int32">
+            <value>8</value>
+        </Attribute>
+        <Attribute name="GranuleYear" type="Int32">
+            <value>1991</value>
+        </Attribute>
+        <Attribute name="HDFVersion" type="String">
+            <value>5-1.8.12 </value>
+        </Attribute>
+        <Attribute name="identifier_product_doi" type="String">
+            <value>10.5067/MEASURES/SO2/DATA202 </value>
+        </Attribute>
+        <Attribute name="identifier_product_doi_authority" type="String">
+            <value>http://dx.doi.org/ </value>
+        </Attribute>
+        <Attribute name="InputPointer" type="String">
+            <value>TOMS-N7_L2-N7TO3_1991m0817t0937-o64696_v001-2015m0910t025628.he5 </value>
+        </Attribute>
+        <Attribute name="InstrumentShortName" type="String">
+            <value>TOMS </value>
+        </Attribute>
+        <Attribute name="LocalGranuleID" type="String">
+            <value>TOMS-N7_L2-TOMSN7SO2_1991m0817t090821-o64696_v02-00-2017m0502t064217.h5 </value>
+        </Attribute>
+        <Attribute name="LocalityValue" type="String">
+            <value>Global </value>
+        </Attribute>
+        <Attribute name="LongName" type="String">
+            <value>TOMS/N7 MS SO2 Vertical Column 1-Orbit L2 Swath 50x50 km </value>
+        </Attribute>
+        <Attribute name="NorthBoundingCoordinate" type="Float32">
+            <value>89.74237823</value>
+        </Attribute>
+        <Attribute name="NumTimes" type="Int32">
+            <value>392</value>
+        </Attribute>
+        <Attribute name="OrbitNumber" type="Int32">
+            <value>64696</value>
+        </Attribute>
+        <Attribute name="ParameterName" type="String">
+            <value>Vertical Column Sulfur Dioxide </value>
+        </Attribute>
+        <Attribute name="PGEVersion" type="String">
+            <value>1.0.5 </value>
+        </Attribute>
+        <Attribute name="PlatformShortName" type="String">
+            <value>Nimbus 7 </value>
+        </Attribute>
+        <Attribute name="ProcessingCenter" type="String">
+            <value>ACPS </value>
+        </Attribute>
+        <Attribute name="ProcessLevel" type="String">
+            <value>2 </value>
+        </Attribute>
+        <Attribute name="ProductType" type="String">
+            <value>L2 Swath </value>
+        </Attribute>
+        <Attribute name="RangeBeginningDate" type="String">
+            <value>1991-08-17 </value>
+        </Attribute>
+        <Attribute name="RangeBeginningTime" type="String">
+            <value>09:08:21 </value>
+        </Attribute>
+        <Attribute name="RangeEndingDate" type="String">
+            <value>1991-08-17 </value>
+        </Attribute>
+        <Attribute name="RangeEndingTime" type="String">
+            <value>10:52:29 </value>
+        </Attribute>
+        <Attribute name="SensorShortName" type="String">
+            <value>Single Monochromator </value>
+        </Attribute>
+        <Attribute name="ShortName" type="String">
+            <value>TOMSN7SO2 </value>
+        </Attribute>
+        <Attribute name="Source" type="String">
+            <value>N7/TOMS </value>
+        </Attribute>
+        <Attribute name="SouthBoundingCoordinate" type="Float32">
+            <value>-78.02539062</value>
+        </Attribute>
+        <Attribute name="VersionID" type="String">
+            <value>2.00 </value>
+        </Attribute>
+        <Attribute name="WestBoundingCoordinate" type="Float32">
+            <value>-180.0000000</value>
+        </Attribute>
+        <Attribute name="TAI93At0zOfGranule" type="Float64">
+            <value>-43459201.000000000</value>
+        </Attribute>
+        <Attribute name="ProductionDateTime" type="String">
+            <value>2017-05-02T06:42:17.0Z </value>
+        </Attribute>
+    </Attribute>
+    <Attribute name="ANCILLARY_DATA" type="Container"/>
+    <Attribute name="GEOLOCATION_DATA" type="Container"/>
+    <Attribute name="SCIENCE_DATA" type="Container"/>
+    <Attribute name="SENSOR_DATA" type="Container"/>
+    <Array name="ANCILLARY_DATA_CloudPressure">
+        <Attribute name="long_name" type="String">
+            <value>Effective Cloud Pressure</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>hPa</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The effective cloud pressure (in hPa) associated with the ground pixel (from OMCLDRR climatology).</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1013.250000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>CloudPressure</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/ANCILLARY_DATA/CloudPressure</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="ANCILLARY_DATA_TerrainPressure">
+        <Attribute name="long_name" type="String">
+            <value>Terrain Pressure</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>hPa</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The terrain pressure (in hPa) at the center of the ground pixel (from N7TO3).</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1013.250000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>TerrainPressure</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/ANCILLARY_DATA/TerrainPressure</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="GEOLOCATION_DATA_CornerLatitude">
+        <Attribute name="long_name" type="String">
+            <value>Ground-Pixel Corner Latitudes</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_north</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The geodetic latitudes (in degrees) of the corner coordinates of the ground pixels (from TOMSN7PIXCOR).</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-90.00000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>90.00000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>CornerLatitude</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/GEOLOCATION_DATA/CornerLatitude</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nCorners</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nCorners" size="4"/>
+    </Array>
+    <Array name="GEOLOCATION_DATA_CornerLongitude">
+        <Attribute name="long_name" type="String">
+            <value>Ground-Pixel Corner Longitudes</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_east</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The geodetic longitudes (in degrees) of the corner coordinates of the ground pixels (from TOMSN7PIXCOR).</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-180.0000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>180.0000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>CornerLongitude</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/GEOLOCATION_DATA/CornerLongitude</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nCorners</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nCorners" size="4"/>
+    </Array>
+    <Array name="GEOLOCATION_DATA_GroundPixelArea">
+        <Attribute name="long_name" type="String">
+            <value>Ground-Pixel Areas</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>square km</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The areas of the ground pixels in square km (from TOMSN7PIXCOR).</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>25000.00000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>GroundPixelArea</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/GEOLOCATION_DATA/GroundPixelArea</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="GEOLOCATION_DATA_GroundPixelQualityFlags">
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Ground Pixel Quality Flags</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The ground pixel quality flags (for the ground pixel):  Bits 0 to 3 together contain the land/water flags:  0 - shallow ocean, 1 - land, 2 - shallow inland water, 3 - ocean coastline/lake shoreline, 4 - ephemeral (intermittent) water, 5 - deep inland water, 6 - continental shelf ocean, 7 - deep ocean, 8 to 14 - not used, 15 - error flag for land/water, Bits 4 is spare and set to 0, Bit 5 - solar eclipse possibility flag (set to 0 for FALSE, 1 for TRUE), Bits 6 to 15 are spare and set to 0.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Int32">
+            <value>0</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Int32">
+            <value>65534</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Int32">
+            <value>-2147483647</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>GroundPixelQualityFlags</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/GEOLOCATION_DATA/GroundPixelQualityFlags</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Int32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="GEOLOCATION_DATA_RelativeAzimuthAngle">
+        <Attribute name="long_name" type="String">
+            <value>Relative Azimuth Angle (sun + 180 - view)</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_eastofnorth</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-180.0000000</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The relative (sun + 180 - view) azimuth angle (in degrees) at the center of the ground pixel.</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>180.0000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>RelativeAzimuthAngle</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/GEOLOCATION_DATA/RelativeAzimuthAngle</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="GEOLOCATION_DATA_SolarZenithAngle">
+        <Attribute name="long_name" type="String">
+            <value>Solar Zenith Angle</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The solar zenith angle (in degrees) at the center of the ground pixel.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>90.00000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>SolarZenithAngle</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/GEOLOCATION_DATA/SolarZenithAngle</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="GEOLOCATION_DATA_TimeTAI93">
+        <Attribute name="units" type="String">
+            <value>seconds since 1993-01-01</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The TAI93 time (in continuous seconds since 12 a.m. UTC on January 1, 1993) of the start of the scan.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float64">
+            <value>-447100000.00000000</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Time at Start of Scan (TAI93)</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float64">
+            <value>10900000.000000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float64">
+            <value>-1.2676506002282294e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>TimeTAI93</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/GEOLOCATION_DATA/TimeTAI93</value>
+        </Attribute>
+        <Float64/>
+        <dimension name="nTimes" size="392"/>
+    </Array>
+    <Array name="GEOLOCATION_DATA_TimeUTC">
+        <Attribute name="valid_min" type="String">
+            <value>1978-11-02T00:00:00.000000Z</value>
+        </Attribute>
+        <Attribute name="valid_max" type="String">
+            <value>1993-05-06T23:59:59.999999Z</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The UTC time of the start of the scan.</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Time at Start of Scan (UTC)</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>CCSDS ASCII Time Code A</value>
+        </Attribute>
+        <Attribute name="fill_value" type="String">
+            <value> </value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>TimeUTC</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/GEOLOCATION_DATA/TimeUTC</value>
+        </Attribute>
+        <String/>
+        <dimension name="nTimes" size="392"/>
+    </Array>
+    <Array name="GEOLOCATION_DATA_ViewingZenithAngle">
+        <Attribute name="long_name" type="String">
+            <value>Viewing Zenith Angle</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The viewing zenith angle (in degrees) at the center of the ground pixel.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>70.00000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>ViewingZenithAngle</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/GEOLOCATION_DATA/ViewingZenithAngle</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_AlgorithmFlag_STL">
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Algorithm Flag STL</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The algorithm flag for the 18-km SO2 retrieval (0 = successful matrix inversion, -1 = failed matrix inversion, singular matrix).</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Int32">
+            <value>0</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Int32">
+            <value>127</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Int32">
+            <value>-2147483647</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>AlgorithmFlag_STL</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/AlgorithmFlag_STL</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Int32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_AlgorithmFlag_Step2">
+        <Attribute name="long_name" type="String">
+            <value>Step2 Algorithm Flag</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The algorithm flag for the Step 2 retrieval (0 = no Step 2 applied, 1 = Step 2 applied, high column SO2 &gt; 30 DU, 2 = Step 2 applied, high ash plus large O3 anomaly between 30S and 30N).</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Int32">
+            <value>0</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Int32">
+            <value>127</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Int32">
+            <value>-2147483647</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>AlgorithmFlag_Step2</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/AlgorithmFlag_Step2</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Int32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_AlgorithmFlag_TRM">
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The algorithm flag for the 8-km SO2 retrieval (0 = successful matrix inversion, -1 = failed matrix Inversion, singular matrix).</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Int32">
+            <value>0</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Int32">
+            <value>127</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Algorithm Flag TRM</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Int32">
+            <value>-2147483647</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>AlgorithmFlag_TRM</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/AlgorithmFlag_TRM</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Int32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_AlgorithmFlag_TRU">
+        <Attribute name="long_name" type="String">
+            <value>Algorithm Flag TRU</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The algorithm flag for the 13-km SO2 retrieval (0 = successful matrix inversion, -1 = failed matrix inversion, singular matrix).</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Int32">
+            <value>0</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Int32">
+            <value>127</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Int32">
+            <value>-2147483647</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>AlgorithmFlag_TRU</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/AlgorithmFlag_TRU</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Int32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_ColumnAmountO3_STL">
+        <Attribute name="long_name" type="String">
+            <value>Best Total Ozone Solution for 18-km SO2 Retrieval</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>DU</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The best retrieved total ozone column amount for the 18-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>50.00000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1000.000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>ColumnAmountO3_STL</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/ColumnAmountO3_STL</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_ColumnAmountO3_TRM">
+        <Attribute name="long_name" type="String">
+            <value>Best Total Ozone Solution for 8-km SO2 Retrieval</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>DU</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The best retrieved total ozone column amount for the 8-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>50.00000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1000.000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>ColumnAmountO3_TRM</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/ColumnAmountO3_TRM</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_ColumnAmountO3_TRU">
+        <Attribute name="long_name" type="String">
+            <value>Best Total Ozone Solution for 13-km SO2 Retrieval</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>DU</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The best retrieved total ozone column amount for the 13-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>50.00000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1000.000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>ColumnAmountO3_TRU</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/ColumnAmountO3_TRU</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_ColumnAmountSO2_STL">
+        <Attribute name="long_name" type="String">
+            <value>Column Amount SO2 at 18 km</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>DU</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The retrieved SO2 column amount at a mean altitude of 18 km.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-20.00000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>2000.000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>ColumnAmountSO2_STL</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/ColumnAmountSO2_STL</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_ColumnAmountSO2_TRM">
+        <Attribute name="units" type="String">
+            <value>DU</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Column Amount SO2 at 8 km</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The retrieved SO2 column amount at a mean altitude of 8 km.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-20.00000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>2000.000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>ColumnAmountSO2_TRM</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/ColumnAmountSO2_TRM</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_ColumnAmountSO2_TRU">
+        <Attribute name="long_name" type="String">
+            <value>Column Amount SO2 at 13 km</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>DU</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The retrieved SO2 column amount at a mean altitude of 13 km.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-20.00000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>2000.000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>ColumnAmountSO2_TRU</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/ColumnAmountSO2_TRU</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_LER380">
+        <Attribute name="long_name" type="String">
+            <value>Lambertian Equivalent Reflectivity at 380 nm</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The Lambertian Equivalent Reflectivity (LER) of the surface at 380 nm associated with the retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1.000000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>LER380</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/LER380</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_NValue">
+        <Attribute name="long_name" type="String">
+            <value>Measured N-Values</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The measured N-values.  N is defined as -100 times the logarithm of the ratio of the measured radiance to the solar irradiance.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>600.0000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>NValue</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/NValue</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel6</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel6" size="6"/>
+    </Array>
+    <Array name="SCIENCE_DATA_Residual_STL">
+        <Attribute name="description" type="String">
+            <value>The N-value residuals for the 18-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-20.00000000</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>N-Value Residual at 18 km</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>10.00000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>Residual_STL</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/Residual_STL</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel6</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel6" size="6"/>
+    </Array>
+    <Array name="SCIENCE_DATA_Residual_TRM">
+        <Attribute name="long_name" type="String">
+            <value>N-Value Residual at 8 km</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The N-value residuals for the 8-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-20.00000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>10.00000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>Residual_TRM</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/Residual_TRM</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel6</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel6" size="6"/>
+    </Array>
+    <Array name="SCIENCE_DATA_Residual_TRU">
+        <Attribute name="long_name" type="String">
+            <value>N-Value Residual at 13 km</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The N-value residuals for the 13-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-20.00000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>10.00000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>Residual_TRU</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/Residual_TRU</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel6</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel6" size="6"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dNdR_STL">
+        <Attribute name="description" type="String">
+            <value>The reflectivity senistivity ratio, dN/dR, for the 18-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>18-km Reflectivity Sensitivity Ratio, dN/dR</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-200.0000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dNdR_STL</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dNdR_STL</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel4" size="4"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dNdR_TRM">
+        <Attribute name="long_name" type="String">
+            <value>8-km Reflectivity Sensitivity Ratio, dN/dR</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The reflectivity sensitivity ratio, dN/dR, for the 8-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-200.0000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dNdR_TRM</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dNdR_TRM</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel4" size="4"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dNdR_TRU">
+        <Attribute name="long_name" type="String">
+            <value>13-km Reflectivity Sensitivity Ratio, dN/dR</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The reflectivity sensitivity ratio, dN/dR, for the 13-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-200.0000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dNdR_TRU</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dNdR_TRU</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel4" size="4"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dNdSO2_STL">
+        <Attribute name="long_name" type="String">
+            <value>18-km SO2 Sensitivity Ratio, dN/dSO2</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1/DU</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The SO2 sensitivity ratio, dN/dSO2, for the 18-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1.000000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dNdSO2_STL</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dNdSO2_STL</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel4" size="4"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dNdSO2_TRM">
+        <Attribute name="description" type="String">
+            <value>The SO2 sensitivity ratio, dN/dSO2, for the 8-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>8-km SO2 Sensitivity Ratio, dN/dSO2</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1/DU</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1.000000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dNdSO2_TRM</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dNdSO2_TRM</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel4" size="4"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dNdSO2_TRU">
+        <Attribute name="long_name" type="String">
+            <value>13-km SO2 Sensitivity Ratio, dN/dSO2</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1/DU</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The SO2 sensitivity ratio, dN/dSO2, for the 13-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1.000000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dNdSO2_TRU</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dNdSO2_TRU</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel4" size="4"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dNdTO3_STL">
+        <Attribute name="long_name" type="String">
+            <value>TO3 Sensitivity Ratio, dN/dTO3</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1/DU</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The TO3 sensitivity ratio, dN/dTO3, for the 18-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1.000000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dNdTO3_STL</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dNdTO3_STL</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel4" size="4"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dNdTO3_TRM">
+        <Attribute name="long_name" type="String">
+            <value>TO3 Sensitivity Ratio, dN/dTO3</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1/DU</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The TO3 sensitivity ratio, dN/dTO3, for the 8-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1.000000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dNdTO3_TRM</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dNdTO3_TRM</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel4" size="4"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dNdTO3_TRU">
+        <Attribute name="long_name" type="String">
+            <value>TO3 Sensitivity Ratio, dN/dTO3</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The TO3 sensitivity ratio, dN/dTO3, for the 13-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>0.000000000</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1/DU</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>1.000000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dNdTO3_TRU</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dNdTO3_TRU</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+        <dimension name="nWavel4" size="4"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dRdlambda_STL">
+        <Attribute name="long_name" type="String">
+            <value>18-km Reflectivity Spectral Slope, dR/dlambda</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1/nm</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The reflectivity spectral slope, dR/dlambda, for the 18-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-0.009999999776</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>0.009999999776</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dRdlambda_STL</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dRdlambda_STL</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dRdlambda_TRM">
+        <Attribute name="long_name" type="String">
+            <value>8-km Reflectivity Spectral Slope, dR/dlambda</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1/nm</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The reflectivity spectral slope, dR/dlambda, for the 8-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-0.009999999776</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>0.009999999776</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dRdlambda_TRM</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dRdlambda_TRM</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SCIENCE_DATA_dRdlambda_TRU">
+        <Attribute name="long_name" type="String">
+            <value>13-km Reflectivity Spectral Slope, dR/dlambda</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1/nm</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The reflectivity spectral slope, dR/dlambda, for the 13-km SO2 retrieval.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-0.009999999776</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>0.009999999776</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>dRdlambda_TRU</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SCIENCE_DATA/dRdlambda_TRU</value>
+        </Attribute>
+        <Attribute name="coordinates" type="String">
+            <value>GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="SENSOR_DATA_Wavelength">
+        <Attribute name="long_name" type="String">
+            <value>TOMS Wavelengths</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>nm</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The TOMS wavelengths.  There are six wavelengths that range from 300 to 400 nm.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>300.0000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>400.0000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>Wavelength</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/SENSOR_DATA/Wavelength</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nWavel6" size="6"/>
+    </Array>
+    <Array name="nTimes">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>nTimes</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Time at Start of Scan (TAI93)</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>seconds since 1993-01-01</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The dimension representing the observation times in the granule.  The values are in TAI93 (time in continuous seconds since 12 a.m. UTC on January 1, 1993).</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>nTimes</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/nTimes</value>
+        </Attribute>
+        <Float64/>
+        <dimension name="nTimes" size="392"/>
+    </Array>
+    <Array name="nXtrack">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>nXtrack</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Scan Position (1-Based)</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The dimension representing the scan position of the observation in the scan line.  The values range from 1 to 35.</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>nXtrack</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/nXtrack</value>
+        </Attribute>
+        <Int32/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="nCorners">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>nCorners</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Ground Pixel Corner</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The dimension representing the ground pixel corners.  There are four corners per ground pixel.</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>nCorners</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/nCorners</value>
+        </Attribute>
+        <Int32/>
+        <dimension name="nCorners" size="4"/>
+    </Array>
+    <Array name="nWavel4">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>nWavel4</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>TOMS Wavelength</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>nm</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The dimension representing a subset of the TOMS wavelengths.  The values range from 300 to 400 nm.</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>nWavel4</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/nWavel4</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nWavel4" size="4"/>
+    </Array>
+    <Array name="nWavel6">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>nWavel6</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>TOMS Wavelength</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>nm</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The dimension representing the TOMS wavelengths.  The values range from 300 to 400 nm.</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>nWavel6</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/nWavel6</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nWavel6" size="6"/>
+    </Array>
+    <Array name="GEOLOCATION_DATA_Latitude">
+        <Attribute name="long_name" type="String">
+            <value>Latitude</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_north</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-90.00000000</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The terrestrial latitude (in degrees) at the center of the ground pixel.</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>90.00000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>Latitude</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/GEOLOCATION_DATA/Latitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <Array name="GEOLOCATION_DATA_Longitude">
+        <Attribute name="long_name" type="String">
+            <value>Longitude</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_east</value>
+        </Attribute>
+        <Attribute name="description" type="String">
+            <value>The terrestrial longitude (in degrees) at the center of the ground pixel.</value>
+        </Attribute>
+        <Attribute name="valid_min" type="Float32">
+            <value>-180.0000000</value>
+        </Attribute>
+        <Attribute name="valid_max" type="Float32">
+            <value>180.0000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-1.267650600e+30</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>Longitude</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/GEOLOCATION_DATA/Longitude</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="nTimes" size="392"/>
+        <dimension name="nXtrack" size="35"/>
+    </Array>
+    <dataBLOB href=""/>
+</Dataset>

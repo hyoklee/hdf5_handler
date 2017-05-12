@@ -1,0 +1,81 @@
+Attributes {
+    HDF5_GLOBAL {
+        String Title "LSMEM/AMSR-E/Aqua Soil Moisture Daily Level-3 0.25-degree";
+        String ProcessingCenter "Princeton University";
+        String ContactPersonName "Eric Wood, Ming Pan";
+        String ContactPersonRole "Data Producer";
+        String ContactPersonEmail "<efwood@princeton.edu>,<mpan@princeton.edu>";
+        String ContactPersonAddress "Dept CEE, Princeton University, Princeton NJ 08544";
+        String Source "Input from NSIDC AMSR-E/Aqua Daily Global Quarter-Degree Gridded Brightness Temperatures";
+        String ProductReference "Pan, M., A. K. Sahoo, and E. F. Wood, 2014: Improving soil moisture retrievals from a physically-based radiative transfer model. Remote Sens. Env., 140, 130-140, doi:10.1016/j.rse.2013.08.020.";
+        String identifier_product_doi "10.5067/MEASURES/WATERCYCLE/DATA313";
+        String identifier_product_doi_authority "http://dx.doi.org/";
+        String ShortName "WC_LSMEM_SOILM_025";
+        String ProcessingDate "2015-10-20";
+        String VersionID "001";
+        String Conventions "CF-1.0";
+        String LocalGranuleID "WC_LSMEM_SOILM_025_L3_V001_20020619T00Z.nc4";
+        String Format "NETCDF4";
+        String RangeBeginningDate "2002-06-19";
+        String RangeBeginningTime "00:00:00";
+        String RangeEndingDate "2002-06-19";
+        String RangeEndingTime "23:59:59";
+        String NorthBoundingCoordinate "90";
+        String SouthBoundingCoordinate "-90";
+        String WestBoundingCoordinate "-180";
+        String EastBoundingCoordinate "180";
+        String LatitudeResolution "0.25";
+        String LongitudeResolution "0.25";
+        String NCO "4.0.9";
+        String history "Wed Nov  4 11:46:35 2015: ncatted -a standard_name,,d,, /home/stream3/hires/measures/data/WC_LSMEM_SM_025/2002/200206/WC_LSMEM_SOILM_025_L3_V001_20020619T00Z.nc4
+Wed Nov  4 11:46:35 2015: ncatted -a units,^time,m,c,days since 2002-06-19 /home/stream3/hires/measures/data/WC_LSMEM_SM_025/2002/200206/WC_LSMEM_SOILM_025_L3_V001_20020619T00Z.nc4
+Wed Nov  4 11:37:41 2015: ncatted -a standard_name,,m,c,soil_moisture_content /home/stream3/hires/measures/data/WC_LSMEM_SM_025/2002/200206/WC_LSMEM_SOILM_025_L3_V001_20020619T00Z.nc4
+Wed Nov  4 11:37:41 2015: ncatted -a units,^time,m,c,days since 2002-06-19 /home/stream3/hires/measures/data/WC_LSMEM_SM_025/2002/200206/WC_LSMEM_SOILM_025_L3_V001_20020619T00Z.nc4
+Wed Nov  4 11:02:01 2015: ncatted -a standard_name,,m,c,soil_moisture_content_at_ground_level /home/stream3/hires/measures/DATA4NASA/WC_LSMEM_SM_025//WC_LSMEM_SOILM_025_L3_V001_20020619T00Z.nc4
+Wed Nov  4 11:02:01 2015: ncatted -a units,^time,m,c,Days since 2002-06-19 /home/stream3/hires/measures/DATA4NASA/WC_LSMEM_SM_025//WC_LSMEM_SOILM_025_L3_V001_20020619T00Z.nc4";
+    }
+    sma {
+        Float32 _FillValue -999000000.0;
+        String units "percent";
+        String long_name "Volumetric Soil Moisture Content at Surface, AMSR-E/Aqua Ascending Overpass";
+        String origname "sma";
+        String fullnamepath "/sma";
+    }
+    smd {
+        Float32 _FillValue -999000000.0;
+        String units "percent";
+        String long_name "Volumetric Soil Moisture Content at Surface, AMSR-E/Aqua Descending Overpass";
+        String origname "smd";
+        String fullnamepath "/smd";
+    }
+    lat {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "lat";
+        Int32 _Netcdf4Dimid 0;
+        String units "degrees_north";
+        String long_name "Latitude";
+        String origname "lat";
+        String fullnamepath "/lat";
+    }
+    lon {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "lon";
+        Int32 _Netcdf4Dimid 1;
+        String units "degrees_east";
+        String long_name "Longitude";
+        String origname "lon";
+        String fullnamepath "/lon";
+    }
+    time {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "time";
+        Int32 _Netcdf4Dimid 2;
+        String long_name "Time";
+        String units "days since 2002-06-19";
+        String origname "time";
+        String fullnamepath "/time";
+    }
+    DODS_EXTRA {
+        String Unlimited_Dimension "time";
+    }
+}

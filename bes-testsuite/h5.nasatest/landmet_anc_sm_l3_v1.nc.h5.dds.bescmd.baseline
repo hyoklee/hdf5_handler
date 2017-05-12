@@ -1,0 +1,19 @@
+Dataset {
+    Int16 sqlon_beg[eqcell = 41252];
+    Float32 eqlon[eqcell = 41252];
+    Int32 eqarea[eqcell = 41252];
+    Float32 lat_bounds[lat = 180][edge = 2];
+    Float32 wf[eqcell = 41252];
+    Int16 eqcells_in_zone[eqzone = 180];
+    Int16 eqlon_index[eqcell = 41252];
+    Int16 eqlat_index[eqcell = 41252];
+    Float32 eqlat[eqcell = 41252];
+    Float32 lon_bounds[lon = 360][edge = 2];
+    Int16 sqlon_end[eqcell = 41252];
+    Float32 porosity[eqcell = 41252];
+    Float32 edge[edge = 2];
+    Float32 eqcell[eqcell = 41252];
+    Float32 eqzone[eqzone = 180];
+    Float32 lat[lat = 180];
+    Float32 lon[lon = 360];
+} LANDMET_ANC_SM_L3_v1.nc.h5;

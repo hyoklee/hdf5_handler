@@ -1,0 +1,165 @@
+Attributes {
+    HDF5_GLOBAL {
+        String Conventions "CF-1.4";
+        String title "LANDMET Soil Moisture Ancillary data";
+        String author "William B. Rossow";
+        String producer "William B. Rossow";
+        String institution "The City College of New York NOAA/CREST";
+        String first_release_date "November 2016";
+        String source " ESA soil moisture CCI projects. Contract No. ESRIN 22086/08/I-EC, ESRIN 4000104814/11/I-NB";
+        String citation "TBD";
+        String references "TBD";
+        String identifier_product_DOI "10.5067/MEASURES/LANDMET/ANC004";
+        String identifier_product_DOI_authority "http://dx.doi.org/";
+        String comment "Data extracted from the ESA Soil Moisture CCI project ancillary datasets; Version one produced at CCNY";
+        String version_id "1";
+        String short_name "LANDMET_ANC_SM";
+        String long_name "LANDMET Ancillary Soil Moisture data L3";
+        String granule_id "LANDMET_ANC_SM_L3_v1.nc";
+        String format "netCDF-4 classic";
+        String range_beginning_time "00:00:00";
+        String range_ending_time "23:59:59";
+        String range_beginning_date "1998-01-01";
+        String range_ending_date "2007-12-31";
+        String production_run_date "2016-11-22";
+        String production_run_time "08:17:49";
+    }
+    sqlon_beg {
+        String long_name "Square grid beginning longitude index";
+        String units "1";
+        String origname "sqlon_beg";
+        String fullnamepath "/sqlon_beg";
+    }
+    eqlon {
+        String long_name "Center longitude of equal-area cell";
+        String units "degrees_east";
+        Float64 valid_min 0.0000000000000000;
+        Float64 valid_max 360.00000000000000;
+        String origname "eqlon";
+        String fullnamepath "/eqlon";
+    }
+    eqarea {
+        String long_name "Equal-area cell area";
+        String units "km2";
+        String origname "eqarea";
+        String fullnamepath "/eqarea";
+    }
+    lat_bounds {
+        String long_name "Beginning and ending latitude for each latitude zone";
+        String units "degrees_north";
+        String origname "lat_bounds";
+        String fullnamepath "/lat_bounds";
+    }
+    wf {
+        String long_name "Wetland Fraction";
+        Float32 valid_range 0.000000000, 100.0000000;
+        String units "Percent";
+        String _CoordinateAxes "lat lon";
+        Float32 _FillValue -9999.000000;
+        String summary "Remapped 1 degree wetland fraction has been derived from the Global Lakes and Wetlands Database (GLWD) level 3 product. From the Discrete Global Grid (DGG) the wetland fraction has been mapped to the 0.25 degree grid by nearest neighbor search. ";
+        String references "Lehner, B., & D\303\203\302\266ll, P. (2004). Development and validation of a global database of lakes, reservoirs and wetlands. Journal of Hydrology, 296, 1";
+        String comment "These data was remapped from ESACCI-SOILMOISTURE-WETLAND_FRACTION_V01.1; from ESA soil moisture CCI projects. Contract No. ESRIN 22086/08/I-EC, ESRIN 4000104814/11/I-NB";
+        String origname "wf";
+        String fullnamepath "/wf";
+    }
+    eqcells_in_zone {
+        String long_name "Number of longitude cells in each equal-area zone";
+        String units "1";
+        Int32 valid_min 1;
+        Int32 valid_max 360;
+        String origname "eqcells_in_zone";
+        String fullnamepath "/eqcells_in_zone";
+    }
+    eqlon_index {
+        String long_name "Longitude index of equal-area cell";
+        String units "1";
+        Int32 valid_min 1;
+        Int32 valid_max 360;
+        String origname "eqlon_index";
+        String fullnamepath "/eqlon_index";
+    }
+    eqlat_index {
+        String long_name "Latitude index of equal-area cell";
+        String units "1";
+        Int32 valid_min 1;
+        Int32 valid_max 180;
+        String origname "eqlat_index";
+        String fullnamepath "/eqlat_index";
+    }
+    eqlat {
+        String long_name "Center latitude of equal-area cell";
+        String units "degrees_north";
+        Float64 valid_min -90.000000000000000;
+        Float64 valid_max 90.000000000000000;
+        String origname "eqlat";
+        String fullnamepath "/eqlat";
+    }
+    lon_bounds {
+        String long_name "Begining and ending longitude for each longitude zone";
+        String units "degrees_east";
+        String origname "lon_bounds";
+        String fullnamepath "/lon_bounds";
+    }
+    sqlon_end {
+        String long_name "Square grid ending longitude index";
+        String units "1";
+        String origname "sqlon_end";
+        String fullnamepath "/sqlon_end";
+    }
+    porosity {
+        String long_name "Porosity";
+        String units "percent";
+        Float32 valid_range 0.000000000, 100.0000000;
+        Float32 _FillValue -9999.000000;
+        String description "Remapped ESA CCI ECV SOILMOISTURE Porosity from Vienna University of Technology, VU University Amsterdam, cci_sm_contact@eodc.eu,Harmonized World Soil Database (version 1.0),2015-08-06 15:19:32 - product produced";
+        String references "Saxton, K. E., Rawls, W. J., Soil Water Characteristic Estimates by Texture and Organic Matter for Hydrologic Solutions. SOILSCI, 2006. 70:1569\342\200\2231578. doi:10.2136/sssaj2005.0117; FAO/IIASA/ISRIC/ISSCAS/JRC, 2008. Harmonized World Soil Database (version 1.0). FAO, Rome, Italy and IIASA, Laxenburg, Austria.";
+        String tracking_id "c796dfe2-5204-41ac-8560-84e6cbfce1f2";
+        String product_version "01.1";
+        String summary "Porosity derived from HWSD v1 (2008) and Saxton and Rawls (2006)";
+        String id "d:\\users\\dc\\ccism\\v02.2\\000_ancillary\\porosity\\ESACCI-SOILMOISTURE-POROSITY_V01.1.nc";
+        String comment "These data were remapped from ESACCI-SOILMOISTURE-POROSITY_V01.1 from the ESA soil moisture CCI projects. Contract No. ESRIN 22086/08/I-EC, ESRIN 4000104814/11/I-NB";
+        String origname "porosity";
+        String fullnamepath "/porosity";
+    }
+    edge {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "This is a netCDF dimension but not a netCDF variable.         2";
+        Int32 _Netcdf4Dimid 0;
+    }
+    eqcell {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "This is a netCDF dimension but not a netCDF variable.     41252";
+        Int32 _Netcdf4Dimid 1;
+    }
+    eqzone {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "This is a netCDF dimension but not a netCDF variable.       180";
+        Int32 _Netcdf4Dimid 2;
+    }
+    lat {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "lat";
+        Int32 _Netcdf4Dimid 4;
+        String long_name "Latitude";
+        String units "degrees_north";
+        Float64 valid_min -90.000000000000000;
+        Float64 valid_max 90.000000000000000;
+        String bounds "lat_bounds";
+        String description "Center latitude of square grid cell";
+        String origname "lat";
+        String fullnamepath "/lat";
+    }
+    lon {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "lon";
+        Int32 _Netcdf4Dimid 3;
+        String long_name "Longitude";
+        String units "degrees_east";
+        Float64 valid_min 0.0000000000000000;
+        Float64 valid_max 360.00000000000000;
+        String bounds "lon_bounds";
+        String description "Center longitude of square grid cell";
+        String origname "lon";
+        String fullnamepath "/lon";
+    }
+}

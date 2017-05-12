@@ -1,0 +1,546 @@
+Attributes {
+    HDF5_GLOBAL {
+        String AuthorAffiliation "NASA/GSFC ";
+        String AuthorName "N. Krotkov, et al. ";
+        String Conventions "CF-1.0 ";
+        String DataSetQuality "Under investigation. ";
+        String DayNightFlag "Day ";
+        Float32 EastBoundingCoordinate 180.0000000;
+        String EquatorCrossingDate "1991-08-17 ";
+        Float32 EquatorCrossingLongitude 13.71999931;
+        String EquatorCrossingTime "10:00:26 ";
+        String FOVResolution "50x50km ";
+        Int32 GranuleDayOfMonth 17;
+        Int32 GranuleDayOfYear 229;
+        Int32 GranuleMonth 8;
+        Int32 GranuleYear 1991;
+        String HDFVersion "5-1.8.12 ";
+        String identifier_product_doi "10.5067/MEASURES/SO2/DATA202 ";
+        String identifier_product_doi_authority "http://dx.doi.org/ ";
+        String InputPointer "TOMS-N7_L2-N7TO3_1991m0817t0937-o64696_v001-2015m0910t025628.he5 ";
+        String InstrumentShortName "TOMS ";
+        String LocalGranuleID "TOMS-N7_L2-TOMSN7SO2_1991m0817t090821-o64696_v02-00-2017m0502t064217.h5 ";
+        String LocalityValue "Global ";
+        String LongName "TOMS/N7 MS SO2 Vertical Column 1-Orbit L2 Swath 50x50 km ";
+        Float32 NorthBoundingCoordinate 89.74237823;
+        Int32 NumTimes 392;
+        Int32 OrbitNumber 64696;
+        String ParameterName "Vertical Column Sulfur Dioxide ";
+        String PGEVersion "1.0.5 ";
+        String PlatformShortName "Nimbus 7 ";
+        String ProcessingCenter "ACPS ";
+        String ProcessLevel "2 ";
+        String ProductType "L2 Swath ";
+        String RangeBeginningDate "1991-08-17 ";
+        String RangeBeginningTime "09:08:21 ";
+        String RangeEndingDate "1991-08-17 ";
+        String RangeEndingTime "10:52:29 ";
+        String SensorShortName "Single Monochromator ";
+        String ShortName "TOMSN7SO2 ";
+        String Source "N7/TOMS ";
+        Float32 SouthBoundingCoordinate -78.02539062;
+        String VersionID "2.00 ";
+        Float32 WestBoundingCoordinate -180.0000000;
+        Float64 TAI93At0zOfGranule -43459201.000000000;
+        String ProductionDateTime "2017-05-02T06:42:17.0Z ";
+    }
+    ANCILLARY_DATA {
+    }
+    GEOLOCATION_DATA {
+    }
+    SCIENCE_DATA {
+    }
+    SENSOR_DATA {
+    }
+    ANCILLARY_DATA_CloudPressure {
+        String long_name "Effective Cloud Pressure";
+        String units "hPa";
+        String description "The effective cloud pressure (in hPa) associated with the ground pixel (from OMCLDRR climatology).";
+        Float32 valid_min 0.000000000;
+        Float32 valid_max 1013.250000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "CloudPressure";
+        String fullnamepath "/ANCILLARY_DATA/CloudPressure";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    ANCILLARY_DATA_TerrainPressure {
+        String long_name "Terrain Pressure";
+        String units "hPa";
+        String description "The terrain pressure (in hPa) at the center of the ground pixel (from N7TO3).";
+        Float32 valid_min 0.000000000;
+        Float32 valid_max 1013.250000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "TerrainPressure";
+        String fullnamepath "/ANCILLARY_DATA/TerrainPressure";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    GEOLOCATION_DATA_CornerLatitude {
+        String long_name "Ground-Pixel Corner Latitudes";
+        String units "degrees_north";
+        String description "The geodetic latitudes (in degrees) of the corner coordinates of the ground pixels (from TOMSN7PIXCOR).";
+        Float32 valid_min -90.00000000;
+        Float32 valid_max 90.00000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "CornerLatitude";
+        String fullnamepath "/GEOLOCATION_DATA/CornerLatitude";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nCorners";
+    }
+    GEOLOCATION_DATA_CornerLongitude {
+        String long_name "Ground-Pixel Corner Longitudes";
+        String units "degrees_east";
+        String description "The geodetic longitudes (in degrees) of the corner coordinates of the ground pixels (from TOMSN7PIXCOR).";
+        Float32 valid_min -180.0000000;
+        Float32 valid_max 180.0000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "CornerLongitude";
+        String fullnamepath "/GEOLOCATION_DATA/CornerLongitude";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nCorners";
+    }
+    GEOLOCATION_DATA_GroundPixelArea {
+        String long_name "Ground-Pixel Areas";
+        String units "square km";
+        String description "The areas of the ground pixels in square km (from TOMSN7PIXCOR).";
+        Float32 valid_min 0.000000000;
+        Float32 valid_max 25000.00000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "GroundPixelArea";
+        String fullnamepath "/GEOLOCATION_DATA/GroundPixelArea";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    GEOLOCATION_DATA_GroundPixelQualityFlags {
+        String units "1";
+        String long_name "Ground Pixel Quality Flags";
+        String description "The ground pixel quality flags (for the ground pixel):  Bits 0 to 3 together contain the land/water flags:  0 - shallow ocean, 1 - land, 2 - shallow inland water, 3 - ocean coastline/lake shoreline, 4 - ephemeral (intermittent) water, 5 - deep inland water, 6 - continental shelf ocean, 7 - deep ocean, 8 to 14 - not used, 15 - error flag for land/water, Bits 4 is spare and set to 0, Bit 5 - solar eclipse possibility flag (set to 0 for FALSE, 1 for TRUE), Bits 6 to 15 are spare and set to 0.";
+        Int32 valid_min 0;
+        Int32 valid_max 65534;
+        Int32 _FillValue -2147483647;
+        String origname "GroundPixelQualityFlags";
+        String fullnamepath "/GEOLOCATION_DATA/GroundPixelQualityFlags";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    GEOLOCATION_DATA_RelativeAzimuthAngle {
+        String long_name "Relative Azimuth Angle (sun + 180 - view)";
+        String units "degrees_eastofnorth";
+        Float32 valid_min -180.0000000;
+        String description "The relative (sun + 180 - view) azimuth angle (in degrees) at the center of the ground pixel.";
+        Float32 valid_max 180.0000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "RelativeAzimuthAngle";
+        String fullnamepath "/GEOLOCATION_DATA/RelativeAzimuthAngle";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    GEOLOCATION_DATA_SolarZenithAngle {
+        String long_name "Solar Zenith Angle";
+        String units "degrees";
+        String description "The solar zenith angle (in degrees) at the center of the ground pixel.";
+        Float32 valid_min 0.000000000;
+        Float32 valid_max 90.00000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "SolarZenithAngle";
+        String fullnamepath "/GEOLOCATION_DATA/SolarZenithAngle";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    GEOLOCATION_DATA_TimeTAI93 {
+        String units "seconds since 1993-01-01";
+        String description "The TAI93 time (in continuous seconds since 12 a.m. UTC on January 1, 1993) of the start of the scan.";
+        Float64 valid_min -447100000.00000000;
+        String long_name "Time at Start of Scan (TAI93)";
+        Float64 valid_max 10900000.000000000;
+        Float64 _FillValue -1.2676506002282294e+30;
+        String origname "TimeTAI93";
+        String fullnamepath "/GEOLOCATION_DATA/TimeTAI93";
+    }
+    GEOLOCATION_DATA_TimeUTC {
+        String valid_min "1978-11-02T00:00:00.000000Z";
+        String valid_max "1993-05-06T23:59:59.999999Z";
+        String description "The UTC time of the start of the scan.";
+        String long_name "Time at Start of Scan (UTC)";
+        String units "CCSDS ASCII Time Code A";
+        String fill_value " ";
+        String origname "TimeUTC";
+        String fullnamepath "/GEOLOCATION_DATA/TimeUTC";
+    }
+    GEOLOCATION_DATA_ViewingZenithAngle {
+        String long_name "Viewing Zenith Angle";
+        String units "degrees";
+        String description "The viewing zenith angle (in degrees) at the center of the ground pixel.";
+        Float32 valid_min 0.000000000;
+        Float32 valid_max 70.00000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "ViewingZenithAngle";
+        String fullnamepath "/GEOLOCATION_DATA/ViewingZenithAngle";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_AlgorithmFlag_STL {
+        String units "1";
+        String long_name "Algorithm Flag STL";
+        String description "The algorithm flag for the 18-km SO2 retrieval (0 = successful matrix inversion, -1 = failed matrix inversion, singular matrix).";
+        Int32 valid_min 0;
+        Int32 valid_max 127;
+        Int32 _FillValue -2147483647;
+        String origname "AlgorithmFlag_STL";
+        String fullnamepath "/SCIENCE_DATA/AlgorithmFlag_STL";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_AlgorithmFlag_Step2 {
+        String long_name "Step2 Algorithm Flag";
+        String units "1";
+        String description "The algorithm flag for the Step 2 retrieval (0 = no Step 2 applied, 1 = Step 2 applied, high column SO2 > 30 DU, 2 = Step 2 applied, high ash plus large O3 anomaly between 30S and 30N).";
+        Int32 valid_min 0;
+        Int32 valid_max 127;
+        Int32 _FillValue -2147483647;
+        String origname "AlgorithmFlag_Step2";
+        String fullnamepath "/SCIENCE_DATA/AlgorithmFlag_Step2";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_AlgorithmFlag_TRM {
+        String units "1";
+        String description "The algorithm flag for the 8-km SO2 retrieval (0 = successful matrix inversion, -1 = failed matrix Inversion, singular matrix).";
+        Int32 valid_min 0;
+        Int32 valid_max 127;
+        String long_name "Algorithm Flag TRM";
+        Int32 _FillValue -2147483647;
+        String origname "AlgorithmFlag_TRM";
+        String fullnamepath "/SCIENCE_DATA/AlgorithmFlag_TRM";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_AlgorithmFlag_TRU {
+        String long_name "Algorithm Flag TRU";
+        String units "1";
+        String description "The algorithm flag for the 13-km SO2 retrieval (0 = successful matrix inversion, -1 = failed matrix inversion, singular matrix).";
+        Int32 valid_min 0;
+        Int32 valid_max 127;
+        Int32 _FillValue -2147483647;
+        String origname "AlgorithmFlag_TRU";
+        String fullnamepath "/SCIENCE_DATA/AlgorithmFlag_TRU";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_ColumnAmountO3_STL {
+        String long_name "Best Total Ozone Solution for 18-km SO2 Retrieval";
+        String units "DU";
+        String description "The best retrieved total ozone column amount for the 18-km SO2 retrieval.";
+        Float32 valid_min 50.00000000;
+        Float32 valid_max 1000.000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "ColumnAmountO3_STL";
+        String fullnamepath "/SCIENCE_DATA/ColumnAmountO3_STL";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_ColumnAmountO3_TRM {
+        String long_name "Best Total Ozone Solution for 8-km SO2 Retrieval";
+        String units "DU";
+        String description "The best retrieved total ozone column amount for the 8-km SO2 retrieval.";
+        Float32 valid_min 50.00000000;
+        Float32 valid_max 1000.000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "ColumnAmountO3_TRM";
+        String fullnamepath "/SCIENCE_DATA/ColumnAmountO3_TRM";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_ColumnAmountO3_TRU {
+        String long_name "Best Total Ozone Solution for 13-km SO2 Retrieval";
+        String units "DU";
+        String description "The best retrieved total ozone column amount for the 13-km SO2 retrieval.";
+        Float32 valid_min 50.00000000;
+        Float32 valid_max 1000.000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "ColumnAmountO3_TRU";
+        String fullnamepath "/SCIENCE_DATA/ColumnAmountO3_TRU";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_ColumnAmountSO2_STL {
+        String long_name "Column Amount SO2 at 18 km";
+        String units "DU";
+        String description "The retrieved SO2 column amount at a mean altitude of 18 km.";
+        Float32 valid_min -20.00000000;
+        Float32 valid_max 2000.000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "ColumnAmountSO2_STL";
+        String fullnamepath "/SCIENCE_DATA/ColumnAmountSO2_STL";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_ColumnAmountSO2_TRM {
+        String units "DU";
+        String long_name "Column Amount SO2 at 8 km";
+        String description "The retrieved SO2 column amount at a mean altitude of 8 km.";
+        Float32 valid_min -20.00000000;
+        Float32 valid_max 2000.000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "ColumnAmountSO2_TRM";
+        String fullnamepath "/SCIENCE_DATA/ColumnAmountSO2_TRM";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_ColumnAmountSO2_TRU {
+        String long_name "Column Amount SO2 at 13 km";
+        String units "DU";
+        String description "The retrieved SO2 column amount at a mean altitude of 13 km.";
+        Float32 valid_min -20.00000000;
+        Float32 valid_max 2000.000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "ColumnAmountSO2_TRU";
+        String fullnamepath "/SCIENCE_DATA/ColumnAmountSO2_TRU";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_LER380 {
+        String long_name "Lambertian Equivalent Reflectivity at 380 nm";
+        String units "1";
+        String description "The Lambertian Equivalent Reflectivity (LER) of the surface at 380 nm associated with the retrieval.";
+        Float32 valid_min 0.000000000;
+        Float32 valid_max 1.000000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "LER380";
+        String fullnamepath "/SCIENCE_DATA/LER380";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_NValue {
+        String long_name "Measured N-Values";
+        String units "1";
+        String description "The measured N-values.  N is defined as -100 times the logarithm of the ratio of the measured radiance to the solar irradiance.";
+        Float32 valid_min 0.000000000;
+        Float32 valid_max 600.0000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "NValue";
+        String fullnamepath "/SCIENCE_DATA/NValue";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel6";
+    }
+    SCIENCE_DATA_Residual_STL {
+        String description "The N-value residuals for the 18-km SO2 retrieval.";
+        Float32 valid_min -20.00000000;
+        String long_name "N-Value Residual at 18 km";
+        String units "1";
+        Float32 valid_max 10.00000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "Residual_STL";
+        String fullnamepath "/SCIENCE_DATA/Residual_STL";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel6";
+    }
+    SCIENCE_DATA_Residual_TRM {
+        String long_name "N-Value Residual at 8 km";
+        String units "1";
+        String description "The N-value residuals for the 8-km SO2 retrieval.";
+        Float32 valid_min -20.00000000;
+        Float32 valid_max 10.00000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "Residual_TRM";
+        String fullnamepath "/SCIENCE_DATA/Residual_TRM";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel6";
+    }
+    SCIENCE_DATA_Residual_TRU {
+        String long_name "N-Value Residual at 13 km";
+        String units "1";
+        String description "The N-value residuals for the 13-km SO2 retrieval.";
+        Float32 valid_min -20.00000000;
+        Float32 valid_max 10.00000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "Residual_TRU";
+        String fullnamepath "/SCIENCE_DATA/Residual_TRU";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel6";
+    }
+    SCIENCE_DATA_dNdR_STL {
+        String description "The reflectivity senistivity ratio, dN/dR, for the 18-km SO2 retrieval.";
+        Float32 valid_max 0.000000000;
+        String long_name "18-km Reflectivity Sensitivity Ratio, dN/dR";
+        String units "1";
+        Float32 valid_min -200.0000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dNdR_STL";
+        String fullnamepath "/SCIENCE_DATA/dNdR_STL";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4";
+    }
+    SCIENCE_DATA_dNdR_TRM {
+        String long_name "8-km Reflectivity Sensitivity Ratio, dN/dR";
+        String units "1";
+        String description "The reflectivity sensitivity ratio, dN/dR, for the 8-km SO2 retrieval.";
+        Float32 valid_min -200.0000000;
+        Float32 valid_max 0.000000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dNdR_TRM";
+        String fullnamepath "/SCIENCE_DATA/dNdR_TRM";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4";
+    }
+    SCIENCE_DATA_dNdR_TRU {
+        String long_name "13-km Reflectivity Sensitivity Ratio, dN/dR";
+        String units "1";
+        String description "The reflectivity sensitivity ratio, dN/dR, for the 13-km SO2 retrieval.";
+        Float32 valid_min -200.0000000;
+        Float32 valid_max 0.000000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dNdR_TRU";
+        String fullnamepath "/SCIENCE_DATA/dNdR_TRU";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4";
+    }
+    SCIENCE_DATA_dNdSO2_STL {
+        String long_name "18-km SO2 Sensitivity Ratio, dN/dSO2";
+        String units "1/DU";
+        String description "The SO2 sensitivity ratio, dN/dSO2, for the 18-km SO2 retrieval.";
+        Float32 valid_min 0.000000000;
+        Float32 valid_max 1.000000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dNdSO2_STL";
+        String fullnamepath "/SCIENCE_DATA/dNdSO2_STL";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4";
+    }
+    SCIENCE_DATA_dNdSO2_TRM {
+        String description "The SO2 sensitivity ratio, dN/dSO2, for the 8-km SO2 retrieval.";
+        Float32 valid_min 0.000000000;
+        String long_name "8-km SO2 Sensitivity Ratio, dN/dSO2";
+        String units "1/DU";
+        Float32 valid_max 1.000000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dNdSO2_TRM";
+        String fullnamepath "/SCIENCE_DATA/dNdSO2_TRM";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4";
+    }
+    SCIENCE_DATA_dNdSO2_TRU {
+        String long_name "13-km SO2 Sensitivity Ratio, dN/dSO2";
+        String units "1/DU";
+        String description "The SO2 sensitivity ratio, dN/dSO2, for the 13-km SO2 retrieval.";
+        Float32 valid_min 0.000000000;
+        Float32 valid_max 1.000000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dNdSO2_TRU";
+        String fullnamepath "/SCIENCE_DATA/dNdSO2_TRU";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4";
+    }
+    SCIENCE_DATA_dNdTO3_STL {
+        String long_name "TO3 Sensitivity Ratio, dN/dTO3";
+        String units "1/DU";
+        String description "The TO3 sensitivity ratio, dN/dTO3, for the 18-km SO2 retrieval.";
+        Float32 valid_min 0.000000000;
+        Float32 valid_max 1.000000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dNdTO3_STL";
+        String fullnamepath "/SCIENCE_DATA/dNdTO3_STL";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4";
+    }
+    SCIENCE_DATA_dNdTO3_TRM {
+        String long_name "TO3 Sensitivity Ratio, dN/dTO3";
+        String units "1/DU";
+        String description "The TO3 sensitivity ratio, dN/dTO3, for the 8-km SO2 retrieval.";
+        Float32 valid_min 0.000000000;
+        Float32 valid_max 1.000000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dNdTO3_TRM";
+        String fullnamepath "/SCIENCE_DATA/dNdTO3_TRM";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4";
+    }
+    SCIENCE_DATA_dNdTO3_TRU {
+        String long_name "TO3 Sensitivity Ratio, dN/dTO3";
+        String description "The TO3 sensitivity ratio, dN/dTO3, for the 13-km SO2 retrieval.";
+        Float32 valid_min 0.000000000;
+        String units "1/DU";
+        Float32 valid_max 1.000000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dNdTO3_TRU";
+        String fullnamepath "/SCIENCE_DATA/dNdTO3_TRU";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude nWavel4";
+    }
+    SCIENCE_DATA_dRdlambda_STL {
+        String long_name "18-km Reflectivity Spectral Slope, dR/dlambda";
+        String units "1/nm";
+        String description "The reflectivity spectral slope, dR/dlambda, for the 18-km SO2 retrieval.";
+        Float32 valid_min -0.009999999776;
+        Float32 valid_max 0.009999999776;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dRdlambda_STL";
+        String fullnamepath "/SCIENCE_DATA/dRdlambda_STL";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_dRdlambda_TRM {
+        String long_name "8-km Reflectivity Spectral Slope, dR/dlambda";
+        String units "1/nm";
+        String description "The reflectivity spectral slope, dR/dlambda, for the 8-km SO2 retrieval.";
+        Float32 valid_min -0.009999999776;
+        Float32 valid_max 0.009999999776;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dRdlambda_TRM";
+        String fullnamepath "/SCIENCE_DATA/dRdlambda_TRM";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SCIENCE_DATA_dRdlambda_TRU {
+        String long_name "13-km Reflectivity Spectral Slope, dR/dlambda";
+        String units "1/nm";
+        String description "The reflectivity spectral slope, dR/dlambda, for the 13-km SO2 retrieval.";
+        Float32 valid_min -0.009999999776;
+        Float32 valid_max 0.009999999776;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "dRdlambda_TRU";
+        String fullnamepath "/SCIENCE_DATA/dRdlambda_TRU";
+        String coordinates "GEOLOCATION_DATA_Latitude GEOLOCATION_DATA_Longitude";
+    }
+    SENSOR_DATA_Wavelength {
+        String long_name "TOMS Wavelengths";
+        String units "nm";
+        String description "The TOMS wavelengths.  There are six wavelengths that range from 300 to 400 nm.";
+        Float32 valid_min 300.0000000;
+        Float32 valid_max 400.0000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "Wavelength";
+        String fullnamepath "/SENSOR_DATA/Wavelength";
+    }
+    nTimes {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "nTimes";
+        String long_name "Time at Start of Scan (TAI93)";
+        String units "seconds since 1993-01-01";
+        String description "The dimension representing the observation times in the granule.  The values are in TAI93 (time in continuous seconds since 12 a.m. UTC on January 1, 1993).";
+        String origname "nTimes";
+        String fullnamepath "/nTimes";
+    }
+    nXtrack {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "nXtrack";
+        String long_name "Scan Position (1-Based)";
+        String units "1";
+        String description "The dimension representing the scan position of the observation in the scan line.  The values range from 1 to 35.";
+        String origname "nXtrack";
+        String fullnamepath "/nXtrack";
+    }
+    nCorners {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "nCorners";
+        String long_name "Ground Pixel Corner";
+        String units "1";
+        String description "The dimension representing the ground pixel corners.  There are four corners per ground pixel.";
+        String origname "nCorners";
+        String fullnamepath "/nCorners";
+    }
+    nWavel4 {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "nWavel4";
+        String long_name "TOMS Wavelength";
+        String units "nm";
+        String description "The dimension representing a subset of the TOMS wavelengths.  The values range from 300 to 400 nm.";
+        String origname "nWavel4";
+        String fullnamepath "/nWavel4";
+    }
+    nWavel6 {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "nWavel6";
+        String long_name "TOMS Wavelength";
+        String units "nm";
+        String description "The dimension representing the TOMS wavelengths.  The values range from 300 to 400 nm.";
+        String origname "nWavel6";
+        String fullnamepath "/nWavel6";
+    }
+    GEOLOCATION_DATA_Latitude {
+        String long_name "Latitude";
+        String units "degrees_north";
+        Float32 valid_min -90.00000000;
+        String description "The terrestrial latitude (in degrees) at the center of the ground pixel.";
+        Float32 valid_max 90.00000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "Latitude";
+        String fullnamepath "/GEOLOCATION_DATA/Latitude";
+    }
+    GEOLOCATION_DATA_Longitude {
+        String long_name "Longitude";
+        String units "degrees_east";
+        String description "The terrestrial longitude (in degrees) at the center of the ground pixel.";
+        Float32 valid_min -180.0000000;
+        Float32 valid_max 180.0000000;
+        Float32 _FillValue -1.267650600e+30;
+        String origname "Longitude";
+        String fullnamepath "/GEOLOCATION_DATA/Longitude";
+    }
+}

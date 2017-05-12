@@ -1,0 +1,8 @@
+Dataset {
+    Float32 et[time = 8][lat = 360][lon = 720];
+    Float64 time_bnds[time = 8][bnds = 2];
+    Float32 bnds[bnds = 2];
+    Float64 lat[lat = 360];
+    Float64 lon[lon = 720];
+    Float64 time[time = 8];
+} WC_PM_ET_050_L4_V001_19920101T00Z.nc4.h5;

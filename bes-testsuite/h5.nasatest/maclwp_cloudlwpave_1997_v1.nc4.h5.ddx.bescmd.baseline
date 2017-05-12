@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Dataset name="maclwp_cloudlwpave_1997_v1.nc4.h5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xml.opendap.org/ns/DAP2" xsi:schemaLocation="http://xml.opendap.org/ns/DAP2 http://xml.opendap.org/dap/dap2.xsd">
+    <Attribute name="HDF5_GLOBAL" type="Container">
+        <Attribute name="title" type="String">
+            <value>Multisensor Advanced Climatology of LWP (MAC-LWP) Cloud-Component Only LWP (CloudLWP)</value>
+        </Attribute>
+        <Attribute name="Identifier_Product_DOI_Authority" type="String">
+            <value>http://dx.doi.org/</value>
+        </Attribute>
+        <Attribute name="Identifier_Product_DOI" type="String">
+            <value>10.5067/MEASURES/MACLWPM</value>
+        </Attribute>
+        <Attribute name="institution" type="String">
+            <value>Columbia University/NASA GISS, New York, NY; and Colorado State University, Fort Collins, CO</value>
+        </Attribute>
+        <Attribute name="source" type="String">
+            <value>Based upon Remote Sensing Systems (RSS) V7 SSM/I, V7 SSMIS, V7 WindSat, V7 AMSR-E, V7 AMSR-2, V7 TMI, and V8.1 GMI 0.25 Degree Cloud LWP Retrievals.  Co-located AMSR-E/MODIS data have revealed the presence of a bias in Cloud LWP (positive Cloud LWP when there should be none). Thus, all sensor and scene 0.25 Degree Cloud LWP data are bias-corrected to account for this discrepancy.</value>
+        </Attribute>
+        <Attribute name="history" type="String">
+            <value>This MAC-LWP Version 1 field was created on Feb 2017. The MAC-LWP product, further described in Elsaesser et al. (2017, J. Climate), is an extension of the heritage UWisc CloudLWP climatology (O'Dell et al. 2008, J. Climate). The use of the latest Remote Sensing Systems (RSS) input datasets, several new satellite sensors, a total (cloud+rain) liquid water path field, and a cloud water bias correction are new relative to the UWisc product.</value>
+        </Attribute>
+        <Attribute name="references" type="String">
+            <value>MAC-LWP product and data fields are described in Elsaesser et al. 2017 (J. Climate).</value>
+        </Attribute>
+        <Attribute name="comments" type="String">
+            <value>Negative numbers should be treated as 0.0 for monthly cloud or total LWP.  However, they must be taken into account (i.e. averaged) in climate studies that perform spatial/temporal averaging of these data to avoid biasing.</value>
+        </Attribute>
+        <Attribute name="contact" type="String">
+            <value>Greg Elsaesser: gregory.elsaesser@columbia.edu; Chris O'Dell: odell@atmos.colostate.edu; Matt Lebsock: matthew.d.lebsock@jpl.nasa.gov; Frank Wentz: frank.wentz@remss.com.</value>
+        </Attribute>
+        <Attribute name="Conventions" type="String">
+            <value>CF-1.6</value>
+        </Attribute>
+    </Attribute>
+    <Attribute name="DODS_EXTRA" type="Container">
+        <Attribute name="Unlimited_Dimension" type="String">
+            <value>time</value>
+        </Attribute>
+    </Attribute>
+    <Array name="lon_bnds">
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>0</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lon_bnds</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lon_bnds</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="lon" size="360"/>
+        <dimension name="bnds" size="2"/>
+    </Array>
+    <Array name="lat_bnds">
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>2</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lat_bnds</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lat_bnds</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="lat" size="180"/>
+        <dimension name="bnds" size="2"/>
+    </Array>
+    <Array name="cloudlwp">
+        <Attribute name="long_name" type="String">
+            <value>Monthly Average Cloud Liquid Water Path</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>g/m^2</value>
+        </Attribute>
+        <Attribute name="missing_value" type="Float32">
+            <value>-999.0000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-999.0000000</value>
+        </Attribute>
+        <Attribute name="comment" type="String">
+            <value>Corrected for diurnal cycle.  Contains cloud only; no rain component.</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>cloudlwp</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/cloudlwp</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="time" size="12"/>
+        <dimension name="lat" size="180"/>
+        <dimension name="lon" size="360"/>
+    </Array>
+    <Array name="cloudlwp_error">
+        <Attribute name="long_name" type="String">
+            <value>1-sigma Error on Monthly Average Cloud Liquid Water Path</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>g/m^2</value>
+        </Attribute>
+        <Attribute name="missing_value" type="Float32">
+            <value>-999.0000000</value>
+        </Attribute>
+        <Attribute name="_FillValue" type="Float32">
+            <value>-999.0000000</value>
+        </Attribute>
+        <Attribute name="comment" type="String">
+            <value>Approximate statistical error only.  Does not contain systematic errors, which are not fully known.</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>cloudlwp_error</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/cloudlwp_error</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="time" size="12"/>
+        <dimension name="lat" size="180"/>
+        <dimension name="lon" size="360"/>
+    </Array>
+    <Array name="bnds">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>This is a netCDF dimension but not a netCDF variable.         2</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>1</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="bnds" size="2"/>
+    </Array>
+    <Array name="lat">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>lat</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>2</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>latitude</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_north</value>
+        </Attribute>
+        <Attribute name="axis" type="String">
+            <value>Y</value>
+        </Attribute>
+        <Attribute name="bounds" type="String">
+            <value>lat_bnds</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lat</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lat</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="lat" size="180"/>
+    </Array>
+    <Array name="lon">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>lon</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>0</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>longitude</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_east</value>
+        </Attribute>
+        <Attribute name="axis" type="String">
+            <value>X</value>
+        </Attribute>
+        <Attribute name="bounds" type="String">
+            <value>lon_bnds</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lon</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lon</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="lon" size="360"/>
+    </Array>
+    <Array name="time">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>time</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>3</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Month index (0-11); 0=January, ..., 11=December</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>months since 1997-01-01 00:00:00</value>
+        </Attribute>
+        <Attribute name="axis" type="String">
+            <value>T</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>time</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/time</value>
+        </Attribute>
+        <Int16/>
+        <dimension name="time" size="12"/>
+    </Array>
+    <dataBLOB href=""/>
+</Dataset>

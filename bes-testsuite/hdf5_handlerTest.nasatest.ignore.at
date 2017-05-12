@@ -1,0 +1,62 @@
+# Process with autom4te to create an -*- Autotest -*- test suite.
+
+
+# ------------------------------
+#
+
+AT_INIT([bes.ignore.conf besstandalone getdap])
+# AT_COPYRIGHT([])
+
+AT_TESTED([besstandalone])
+
+# Usage: _AT_TEST_*(<bescmd source>, <baseline file>)
+
+m4_define([_AT_BESCMD_TEST],   
+[AT_SETUP([BESCMD $1])
+AT_KEYWORDS([bescmd])
+# Use the following AT_CHECK to generate baseline file.
+AT_CHECK([besstandalone -c $abs_builddir/bes.ignore.conf -i $1 > $2 || true], [], [stdout], [stderr])
+
+# This is the original.
+AT_CHECK([besstandalone -c $abs_builddir/bes.ignore.conf -i $1 || true], [], [stdout], [stderr])
+AT_CHECK([diff -b -B $2 stdout || diff -b -B $2 stderr], [], [ignore],[],[])
+AT_CLEANUP])
+
+m4_define([_AT_BESCMD_BINARYDATA_TEST],   
+[AT_SETUP([BESCMD $1])
+AT_KEYWORDS([bescmd])
+# Use the following AT_CHECK to generate baseline file.
+#AT_CHECK([besstandalone -c $abs_builddir/bes.ignore.conf -i $1 | getdap -M - > $2 || true], [], [stdout], [stderr])
+
+# This is the original.
+AT_CHECK([besstandalone -c $abs_builddir/bes.ignore.conf -i $1 | getdap -M - || true], [], [stdout], [stderr])
+AT_CHECK([diff -b -B $2 stdout || diff -b -B $2 stderr], [], [ignore],[],[])
+AT_CLEANUP])
+
+m4_define([AT_BESCMD_RESPONSE_TEST],
+[_AT_BESCMD_TEST([$abs_srcdir/h5.nasatest/$1], [$abs_srcdir/h5.nasatest.ignore/$1.baseline])
+])
+
+m4_define([AT_BESCMD_BINARYDATA_RESPONSE_TEST],
+[_AT_BESCMD_BINARYDATA_TEST([$abs_srcdir/h5.nasatest/$1], [$abs_srcdir/h5.nasatest/$1.baseline])
+])
+
+# Test NASA files.
+AT_BESCMD_RESPONSE_TEST([landmet_anc_sm_l3_v1.nc.h5.das.bescmd])
+
+AT_BESCMD_RESPONSE_TEST([maclwp_cloudlwpave_1997_v1.nc4.h5.das.bescmd])
+
+AT_BESCMD_RESPONSE_TEST([OMPS-NPP_LP-L2-AER675-DAILY_v1.0_2012m0207_2017m0131t200241.h5.das.bescmd])
+
+AT_BESCMD_RESPONSE_TEST([OMPS-NPP_NMNO2-L2_2017m0101t000532_o26838_2017m0309t171152.h5.das.bescmd])
+AT_BESCMD_RESPONSE_TEST([OMPS-NPP_NMSO2-L2_2017m0226t010004_o27633_2017m0310t063013.h5.das.bescmd])
+
+AT_BESCMD_RESPONSE_TEST([TOMS-N7_L2-TOMSN7SO2_1991m0817t090821-o64696_v02-00-2017m0502t064217.h5.das.bescmd])
+
+AT_BESCMD_RESPONSE_TEST([WC_LSMEM_SOILM_025_L3_V001_20020619T00Z.nc4.h5.das.bescmd])
+
+AT_BESCMD_RESPONSE_TEST([WC_MULTISEN_PREC_025_L3_V001_20101231T00Z.nc4.h5.das.bescmd])
+
+AT_BESCMD_RESPONSE_TEST([WC_PM_ET_050_L4_V001_19920101T00Z.nc4.h5.das.bescmd])
+
+

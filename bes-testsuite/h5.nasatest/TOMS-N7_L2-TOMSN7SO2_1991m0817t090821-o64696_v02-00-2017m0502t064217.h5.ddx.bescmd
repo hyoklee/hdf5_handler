@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request reqID="some_unique_value" >
+    <setContext name="dap_format">dap2</setContext>
+    <setContainer name="maclwp_cloudlwpave_1997_v1" space="catalog">/data/TOMS-N7_L2-TOMSN7SO2_1991m0817t090821-o64696_v02-00-2017m0502t064217.h5</setContainer>
+    <define name="d">
+	<container name="maclwp_cloudlwpave_1997_v1" />
+    </define>
+    <get type="ddx" definition="d" />
+</request>

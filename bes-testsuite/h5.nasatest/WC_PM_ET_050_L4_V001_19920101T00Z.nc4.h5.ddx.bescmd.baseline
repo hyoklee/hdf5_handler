@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Dataset name="WC_PM_ET_050_L4_V001_19920101T00Z.nc4.h5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xml.opendap.org/ns/DAP2" xsi:schemaLocation="http://xml.opendap.org/ns/DAP2 http://xml.opendap.org/dap/dap2.xsd">
+    <Attribute name="HDF5_GLOBAL" type="Container">
+        <Attribute name="ProcessingCenter" type="String">
+            <value>Princeton University</value>
+        </Attribute>
+        <Attribute name="ContactPersonName" type="String">
+            <value>Eric Wood, Ming Pan</value>
+        </Attribute>
+        <Attribute name="ContactPersonRole" type="String">
+            <value>Data producer</value>
+        </Attribute>
+        <Attribute name="ContactPersonEmail" type="String">
+            <value>&lt;efwood@princeton.edu&gt;, &lt;mpan@princeton.edu&gt;</value>
+        </Attribute>
+        <Attribute name="ContactPersonAddress" type="String">
+            <value>Dept CEE, Princeton University, Princeton NJ 08544</value>
+        </Attribute>
+        <Attribute name="Source" type="String">
+            <value>Radiation input from NASA/GEWEX Surface Radiation Budget (SRB) Release-3.0 dataset and surface meteorology from 1.0-deg Princeton Global Forcing (PGF) dataset</value>
+        </Attribute>
+        <Attribute name="ProductReference" type="String">
+            <value>Vinukollu, R. K., E. F. Wood, C. R. Ferguson and J. B. Fisher, 2011: Global Estimates of Evapotranspiration for Climate Studies using Multi-Sensor Remote Sensing Data: Evaluation of Three Process-Based Approaches, Remote Sens. Env., 115(3), 801-823, doi: 10.1016/j.rse.2010.11.006</value>
+        </Attribute>
+        <Attribute name="identifier_product_doi" type="String">
+            <value>10.5067/MEASURES/WATERCYCLE/DATA314</value>
+        </Attribute>
+        <Attribute name="identifier_product_doi_authority" type="String">
+            <value>http://dx.doi.org/</value>
+        </Attribute>
+        <Attribute name="ShortName" type="String">
+            <value>WC_PM_ET_050</value>
+        </Attribute>
+        <Attribute name="ProcessingDate" type="String">
+            <value>2017-01-31</value>
+        </Attribute>
+        <Attribute name="VersionID" type="String">
+            <value>001</value>
+        </Attribute>
+        <Attribute name="Conventions" type="String">
+            <value>CF-1.0</value>
+        </Attribute>
+        <Attribute name="Format" type="String">
+            <value>NETCDF4</value>
+        </Attribute>
+        <Attribute name="RangeBeginningDate" type="String">
+            <value>1992-01-01</value>
+        </Attribute>
+        <Attribute name="RangeBeginningTime" type="String">
+            <value>00:00:00</value>
+        </Attribute>
+        <Attribute name="RangeEndingDate" type="String">
+            <value>1992-01-01</value>
+        </Attribute>
+        <Attribute name="RangeEndingTime" type="String">
+            <value>23:59:59</value>
+        </Attribute>
+        <Attribute name="NorthBoundingCoordinate" type="String">
+            <value>90</value>
+        </Attribute>
+        <Attribute name="SouthBoundingCoordinate" type="String">
+            <value>-90</value>
+        </Attribute>
+        <Attribute name="WestBoundingCoordinate" type="String">
+            <value>-180</value>
+        </Attribute>
+        <Attribute name="EastBoundingCoordinate" type="String">
+            <value>180</value>
+        </Attribute>
+        <Attribute name="LatitudeResolution" type="String">
+            <value>0.5</value>
+        </Attribute>
+        <Attribute name="LongitudeResolution" type="String">
+            <value>0.5</value>
+        </Attribute>
+        <Attribute name="NCO" type="String">
+            <value>4.2.0</value>
+        </Attribute>
+        <Attribute name="LocalGranuleID" type="String">
+            <value>WC_PM_ET_050_L4_V001_19920101T00Z.nc4</value>
+        </Attribute>
+        <Attribute name="Title" type="String">
+            <value>SRB/GEWEX evapotranspiration (Penman-Monteith) L4 3 hour 0.5 degree x 0.5 degree V1</value>
+        </Attribute>
+    </Attribute>
+    <Attribute name="DODS_EXTRA" type="Container">
+        <Attribute name="Unlimited_Dimension" type="String">
+            <value>time</value>
+        </Attribute>
+    </Attribute>
+    <Array name="et">
+        <Attribute name="_FillValue" type="Float32">
+            <value>-999000000.0</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>kg/m^2/s</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Evapotranspiration</value>
+        </Attribute>
+        <Attribute name="standard_name" type="String">
+            <value>water_evaporation_flux</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>et</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/et</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="time" size="8"/>
+        <dimension name="lat" size="360"/>
+        <dimension name="lon" size="720"/>
+    </Array>
+    <Array name="time_bnds">
+        <Attribute name="units" type="String">
+            <value>minutes since 1992-01-01 00:00</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>time_bnds</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/time_bnds</value>
+        </Attribute>
+        <Float64/>
+        <dimension name="time" size="8"/>
+        <dimension name="bnds" size="2"/>
+    </Array>
+    <Array name="bnds">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>This is a netCDF dimension but not a netCDF variable.         2</value>
+        </Attribute>
+        <Float32/>
+        <dimension name="bnds" size="2"/>
+    </Array>
+    <Array name="lat">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>lat</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>1</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_north</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Latitude</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lat</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lat</value>
+        </Attribute>
+        <Float64/>
+        <dimension name="lat" size="360"/>
+    </Array>
+    <Array name="lon">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>lon</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>0</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>degrees_east</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Longitude</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>lon</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/lon</value>
+        </Attribute>
+        <Float64/>
+        <dimension name="lon" size="720"/>
+    </Array>
+    <Array name="time">
+        <Attribute name="CLASS" type="String">
+            <value>DIMENSION_SCALE</value>
+        </Attribute>
+        <Attribute name="NAME" type="String">
+            <value>time</value>
+        </Attribute>
+        <Attribute name="_Netcdf4Dimid" type="Int32">
+            <value>2</value>
+        </Attribute>
+        <Attribute name="long_name" type="String">
+            <value>Time</value>
+        </Attribute>
+        <Attribute name="units" type="String">
+            <value>minutes since 1992-01-01 00:00</value>
+        </Attribute>
+        <Attribute name="bounds" type="String">
+            <value>time_bnds</value>
+        </Attribute>
+        <Attribute name="origname" type="String">
+            <value>time</value>
+        </Attribute>
+        <Attribute name="fullnamepath" type="String">
+            <value>/time</value>
+        </Attribute>
+        <Float64/>
+        <dimension name="time" size="8"/>
+    </Array>
+    <dataBLOB href=""/>
+</Dataset>

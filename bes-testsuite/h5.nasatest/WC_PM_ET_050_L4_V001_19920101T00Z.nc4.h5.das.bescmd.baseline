@@ -1,0 +1,79 @@
+Attributes {
+    HDF5_GLOBAL {
+        String ProcessingCenter "Princeton University";
+        String ContactPersonName "Eric Wood, Ming Pan";
+        String ContactPersonRole "Data producer";
+        String ContactPersonEmail "<efwood@princeton.edu>, <mpan@princeton.edu>";
+        String ContactPersonAddress "Dept CEE, Princeton University, Princeton NJ 08544";
+        String Source "Radiation input from NASA/GEWEX Surface Radiation Budget (SRB) Release-3.0 dataset and surface meteorology from 1.0-deg Princeton Global Forcing (PGF) dataset";
+        String ProductReference "Vinukollu, R. K., E. F. Wood, C. R. Ferguson and J. B. Fisher, 2011: Global Estimates of Evapotranspiration for Climate Studies using Multi-Sensor Remote Sensing Data: Evaluation of Three Process-Based Approaches, Remote Sens. Env., 115(3), 801-823, doi: 10.1016/j.rse.2010.11.006";
+        String identifier_product_doi "10.5067/MEASURES/WATERCYCLE/DATA314";
+        String identifier_product_doi_authority "http://dx.doi.org/";
+        String ShortName "WC_PM_ET_050";
+        String ProcessingDate "2017-01-31";
+        String VersionID "001";
+        String Conventions "CF-1.0";
+        String Format "NETCDF4";
+        String RangeBeginningDate "1992-01-01";
+        String RangeBeginningTime "00:00:00";
+        String RangeEndingDate "1992-01-01";
+        String RangeEndingTime "23:59:59";
+        String NorthBoundingCoordinate "90";
+        String SouthBoundingCoordinate "-90";
+        String WestBoundingCoordinate "-180";
+        String EastBoundingCoordinate "180";
+        String LatitudeResolution "0.5";
+        String LongitudeResolution "0.5";
+        String NCO "4.2.0";
+        String LocalGranuleID "WC_PM_ET_050_L4_V001_19920101T00Z.nc4";
+        String Title "SRB/GEWEX evapotranspiration (Penman-Monteith) L4 3 hour 0.5 degree x 0.5 degree V1";
+    }
+    et {
+        Float32 _FillValue -999000000.0;
+        String units "kg/m^2/s";
+        String long_name "Evapotranspiration";
+        String standard_name "water_evaporation_flux";
+        String origname "et";
+        String fullnamepath "/et";
+    }
+    time_bnds {
+        String units "minutes since 1992-01-01 00:00";
+        String origname "time_bnds";
+        String fullnamepath "/time_bnds";
+    }
+    bnds {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "This is a netCDF dimension but not a netCDF variable.         2";
+    }
+    lat {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "lat";
+        Int32 _Netcdf4Dimid 1;
+        String units "degrees_north";
+        String long_name "Latitude";
+        String origname "lat";
+        String fullnamepath "/lat";
+    }
+    lon {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "lon";
+        Int32 _Netcdf4Dimid 0;
+        String units "degrees_east";
+        String long_name "Longitude";
+        String origname "lon";
+        String fullnamepath "/lon";
+    }
+    time {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "time";
+        Int32 _Netcdf4Dimid 2;
+        String long_name "Time";
+        String units "minutes since 1992-01-01 00:00";
+        String bounds "time_bnds";
+        String origname "time";
+        String fullnamepath "/time";
+    }
+    DODS_EXTRA {
+        String Unlimited_Dimension "time";
+    }
+}

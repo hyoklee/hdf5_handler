@@ -1,0 +1,79 @@
+Attributes {
+    HDF5_GLOBAL {
+        String Title "TMPA/TMI/TRMM Precipitation and Uncertainty 3-Hourly Level-3 0.25-degree";
+        String ProcessingCenter "Colorado State University";
+        String ContactPersonName "Chris Kummerow, Janice Bytheway";
+        String ContactPersonRole "Co-Investigator, Research Associate";
+        String ContactPersonEmail "<kummerow@atmos.colostate.edu>, <janice@atmos.colostate.edu>";
+        String ContactPersonAddress "1371 Campus Delivery, Fort Collins, CO 80523";
+        String Source "Precipitation estimates obtained from the TRMM TMPA Data Set based on the TRMM Multisatellite Precipitation Analysis (TMPA) algorithm (Huffman et al., 2007) Version 7 data (Huffman and Bolvin, 2013). Error estimation algorithm description in Bytheway and Kummerow (2013)";
+        String ProductReference1 "Huffman, G. J., R. F. Adler, D. T. Bolvin, G. Gu, E. J. Nelkin, K. P. Bowman, Y. Hong, E. F. Stocker, and D. B. Wolff, 2007: The TRMM multisatellite precipitation analysis (TMPA): Quasi-global, multiyear, combined-sensor precipitation estimates at fine scales, J. Hydrometeorol. 8, 38-55, doi:10.1175.JHM560.1";
+        String ProductReference2 "Huffman, G. J. and D. T. Bolvin, 2013: TRMM and other data precipitation data set documentation. Available at: ftp://precip.gsfc.nasa.gov/pub/trmmdocs/3B42_3B43_doc.pdf";
+        String ProductReference3 "Bytheway, J. L. and C. D. Kummerow, 2013: Inferring the uncertainty of satellite precipitation estimates in data-sparse regions over land, J. Geophys. Res., 118, 9524-9533, doi:10.1002/jgrd.50607";
+        String identifier_product_doi "10.5067/MEASURES/WATERCYCLE/DATA312";
+        String identifier_product_doi_authority "http://dx.doi.org/";
+        String ShortName "WC_MULTISEN_PREC_025";
+        String ProcessingDate "2015-04-22";
+        String VersionID "001";
+        String Conventions "CF-1.0";
+        String LocalGranuleID "WC_MULTISEN_PREC_025_L3_V001_20101231T00Z.nc4";
+        String Format "NETCDF4";
+        String RangeBeginningDate "2010-12-31";
+        String RangeBeginningTime "00:00:00";
+        String RangeEndingDate "2010-12-31";
+        String RangeEndingTime "23:59:59";
+        String NorthBoundingCoordinate "50";
+        String SouthBoundingCoordinate "-50";
+        String WestBoundingCoordinate "-180";
+        String EastBoundingCoordinate "180";
+        String LatitudeResolution "0.25";
+        String LongitudeResolution "0.25";
+        String NCO "4.1.0";
+    }
+    prec {
+        Float32 _FillValue -999000000.0;
+        String units "mm";
+        String long_name "3-hourly Accumulated Precipitation";
+        String standard_name "precipitation_amount";
+        String origname "prec";
+        String fullnamepath "/prec";
+    }
+    rmse {
+        Float32 _FillValue -999000000.0;
+        String units "mm";
+        String long_name "Root Mean Square Error";
+        String standard_name "rmse_precipitation_amount";
+        String origname "rmse";
+        String fullnamepath "/rmse";
+    }
+    lat {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "lat";
+        Int32 _Netcdf4Dimid 0;
+        String units "degrees_north";
+        String long_name "Latitude";
+        String origname "lat";
+        String fullnamepath "/lat";
+    }
+    lon {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "lon";
+        Int32 _Netcdf4Dimid 1;
+        String units "degrees_east";
+        String long_name "Longitude";
+        String origname "lon";
+        String fullnamepath "/lon";
+    }
+    time {
+        String CLASS "DIMENSION_SCALE";
+        String NAME "time";
+        Int32 _Netcdf4Dimid 2;
+        String long_name "Time";
+        String units "minutes since 2010-12-31 00:00";
+        String origname "time";
+        String fullnamepath "/time";
+    }
+    DODS_EXTRA {
+        String Unlimited_Dimension "time";
+    }
+}

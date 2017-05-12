@@ -1,0 +1,10 @@
+Dataset {
+    Float32 lon_bnds[lon = 360][bnds = 2];
+    Float32 lat_bnds[lat = 180][bnds = 2];
+    Float32 cloudlwp[time = 12][lat = 180][lon = 360];
+    Float32 cloudlwp_error[time = 12][lat = 180][lon = 360];
+    Float32 bnds[bnds = 2];
+    Float32 lat[lat = 180];
+    Float32 lon[lon = 360];
+    Int16 time[time = 12];
+} maclwp_cloudlwpave_1997_v1.nc4.h5;

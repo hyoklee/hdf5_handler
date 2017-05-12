@@ -1,0 +1,7 @@
+Dataset {
+    Float32 prec[time = 8][lat = 720][lon = 1440];
+    Float32 rmse[time = 8][lat = 720][lon = 1440];
+    Float64 lat[lat = 720];
+    Float64 lon[lon = 1440];
+    Float64 time[time = 8];
+} WC_MULTISEN_PREC_025_L3_V001_20101231T00Z.nc4.h5;
